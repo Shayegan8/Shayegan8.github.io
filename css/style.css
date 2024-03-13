@@ -1,0 +1,57 @@
+@font-face {
+    font-family: fonti;
+    src: url("../font/Chekgu\ Oke.ttf");
+}
+
+@font-face {
+    font-family: fonti1;
+    src: url("../font/More\ Ideas.otf");
+}
+
+body {
+    background-image: url("images/150228-linux-tux-wallpaper.png");
+    background-size: cover;
+    font-family: fonti;
+}
+
+.top {
+    border: 3px solid black;
+    padding-top: 1.4%;
+    padding-bottom: 1.4%;
+}
+
+.top a {
+    text-align: center;
+    display: block;
+    color: black;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+.projects {
+    font-family: fonti1;
+    float: right;
+    border: 2px solid black;
+    margin-top: 1%;
+    padding-right: 4%;
+    padding-bottom: 15%;
+}
+
+.projects a { 
+    text-decoration: none;
+}
+
+.fbfel a {
+    text-decoration: none;
+}
+
+.fbfel {
+    font-family: fonti1;
+    float: left;
+    color: blueviolet;
+
+}
+
+.projects1 {
+    margin-left: 5%;
+}
