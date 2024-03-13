@@ -10,8 +10,10 @@
 
 body {
     background-image: url("images/150228-linux-tux-wallpaper.png");
+    background-repeat: no-repeat;
     background-size: cover;
     font-family: fonti;
+
 }
 
 .top {
