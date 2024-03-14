@@ -9,11 +9,7 @@
 }
 
 body {
-    background-image: url("images/150228-linux-tux-wallpaper.png");
-    background-repeat: no-repeat;
-    background-size: cover;
     font-family: fonti;
-
 }
 
 .top {
@@ -35,8 +31,8 @@ body {
     float: right;
     border: 2px solid black;
     margin-top: 1%;
-    padding-right: 4%;
-    padding-bottom: 15%;
+    padding-right: 1%;
+    padding-bottom: 35%;
 }
 
 .projects a { 

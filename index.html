@@ -3,31 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Shayegan8 room</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> 
+    <style>
+        @font-face {
+            font-family: kiri;
+            src: url(font/MadimiOne-Regular.ttf);
+        }
+
+        body {
+            background-image: url(css/images/stars.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 100vh;
+        }
+    </style>
+    <title>Shayegan8 personal website</title>
 </head>
-<body>
-    <div class="top">
-        <a href="https://github.com/Shayegan8">Shayegan8 room</a>
+<body class="d-flex flex-column min-vh-100">
+    <div class="container p-4">
+        <nav class="navbar navbar-dark bg-dark p-3"> 
+            <a class="navbar-brand" href="">Shayegan8</a>
+            <ul class="navbar-nav me-auto navbar-nav-scroll">
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/Shayegan8" target="_blank">Home</a>
+                  </li>
+            </ul>
+        </nav>
     </div>
-
-    <div class="projects">
-        <p class="projects1" style="font-family: fonti;">Public repositories</p><br>
-        <ul style="color: rgb(40, 40, 150);">
-            <li><a href="https://github.com/Shayegan8/simple-arenaManager" target="_blank">Simple-arenaManager</a></li>
-            <li><a href="https://github.com/Shayegan8/Papijoy" target="_blank">Papijoy</a></li>
-            <li><a href="https://github.com/Shayegan8/simplechat" target="_blank">Simple-chat</a></li>
-            <li><a href="https://github.com/Shayegan8/Shayegan8.github.io" target="_blank">This file</a></li>
-        </ul>
-    </div>
-
-    <div class="newsfront" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
-        <h1>Information</h6>
-        <p>average gnu/linux user, NO MORE CONFESSION</p>
+    
+    <div class="container-md p-4 text-white">
+        <p class="h2">Information</p>
+        <p class="m-3">Average gnu/linux user, Interested in Rust, Go</p>
         <br>
+        <div class="bg-dark position-absolute">
+            <a href="https://github.com/Shayegan8?tab=repositories" style="text-decoration: none;" target="_blank">
+                <p class="h3" style="color: rgb(255, 255, 255);">
+                    Shayegan8 repositories
+                </p>
+                <p class="text-white">Click on me to see Shayegan8 Projects</p>    
+            </a>
+        </div>
+        
+    </div>    
+    <div class="container-md p-4 text-white">
+        <br>
+        <br>
+        <div class="bg-dark position-absolute">
+            <a href="https://github.com/Over3dge/FBFEL" style="text-decoration: none;" target="_blank">
+                <p class="text-danger m-3">CHECK OUT OUR LICENSE</p>    
+            </a>
+        </div>
     </div>
-    <div class="fbfel">
-        <a href="https://github.com/Over3dge/FBFEL" target="_blank">CHECK OUT OUR LICENSE</a>
+    <div class="container p-4 text-white">
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-7">
+            </div>
+            <div class="col-5">
+                <div class="bg-dark">
+                    <p class="text-white text-center p-2 m-1">Repositories</p>
+                    <ul class="text-danger" style="font-family: kiri;">
+                        <li>
+                            <a href="https://github.com/Shayegan8/simple-arenaManager" target="_blank">arenaManager</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/Shayegan8/Simple-chat" target="_blank">Cchat</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/Shayegan8/Papijoy" target="_blank">Papijoy</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/Shayegan8/Shayegan8.github.io" target="_blank">This</a>
+                        </li>
+                        <br>
+                    </ul>    
+                </div>
+            </div>
+        </div>
+        
     </div>
+    <footer class="mt-auto text-center text-white">
+        <div class="container mt-1 text-center">
+            <a href="https://www.aparat.com/Mrmelon" target="_blank" style="text-decoration: none;" class="text-success">Aparat</a>
+            <p class="text-white">Copyright © 2024</p>
+        </div>
+    </footer>
 </body>
 </html>
