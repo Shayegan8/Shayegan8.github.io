@@ -26,6 +26,11 @@
     <title>Shayegan8 personal website</title>
 </head>
 
+<div id="notfound" class="container text-center" style="display: none;">
+    <div class="position-absolute top-50 start-50 translate-middle">
+        <p class="h1 text-danger">Page not found</p>
+    </div>
+</div>
 <body class="d-flex flex-column min-vh-100">
     <div class="container-sm p-4">
         <nav class="navbar navbar-dark bg-dark p-3">
@@ -78,11 +83,16 @@
         inputistan.addEventListener('keyup', (x) => {
             const inputString = x.target.value.toLowerCase();
 
-            filtereds = values.filter((x) => {
+            let filtereds = values.filter((x) => {
                 return x.name.includes(inputString);
             });
-            
-            showPages(filtereds, true);
+            if(filtereds.length == 0) {
+                document.getElementById("main").style.display = 'none';
+                filtered.style.display = 'none';
+                document.getElementById("notfound").style.display = 'block';
+            } else {
+                showPages(filtereds, true);
+            }
         });
 
         function showPages(valuess, booli) {
@@ -102,6 +112,7 @@
                 } else {
                     document.getElementById("main").style.display = 'block';
                     filtered.style.display = 'none';
+                    document.getElementById("notfound").style.display = 'none';
                 }
             filtered.innerHTML = cards;
         }
