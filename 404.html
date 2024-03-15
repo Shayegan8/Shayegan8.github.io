@@ -17,14 +17,30 @@
     <title>404</title>
 </head>
 <body class="d-flex flex-column min-vh-100">
-    <div class="container p-4">
-        <nav class="navbar navbar-dark bg-dark p-3"> 
+    <div class="container-sm p-4">
+        <nav class="navbar navbar-dark bg-dark p-3">
             <a class="navbar-brand" href="https://shayegan8.github.io/">Shayegan8</a>
-            <ul class="navbar-nav me-auto navbar-nav-scroll">
+            <ul class="navbar-nav navbar-nav-scroll">
                 <li class="nav-item">
                     <a class="nav-link" href="https://github.com/Shayegan8" target="_blank">Home</a>
-                  </li>
+                </li>
             </ul>
+            <a style="text-decoration: none;" class="nav-link text-primary p-2 me-auto navbar-nav-scroll" href="#" id="manage"
+                     role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Pages
+                    </a>
+                    <ul class="jumbotron vertical-center bg-dark dropdown-menu" aria-labelledby="manage">
+                        <li>
+                            <a class="dropdown-item text-danger" href="#">ArenaManager</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item text-danger" href="#">Papijoy</a>
+                        </li>
+                    </ul>
+            <form class="text-black form-inline mt-2 mt-md-0" style="width: 30%;">
+                <input class="bg-danger text-black form-control mr-sm-2 btn btn-outline-dark" id="searchi" type="text"
+                    placeholder="Search" aria-label="search">
+            </form>
         </nav>
     </div>
     <div class="container text-center">
