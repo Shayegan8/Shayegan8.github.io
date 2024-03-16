@@ -37,6 +37,16 @@ inputistan.addEventListener('keyup', (x) => {
     }
 });
 
+inputistan.addEventListener('change', (x) => {
+    if(filtereds.length == 0) {
+        document.getElementById("main").style.display = 'none';
+        filtered.style.display = 'none';
+        document.getElementById("notfound").style.display = 'block';
+    } else {
+        showPages(filtereds);
+    }
+});
+
 function showPages(valuess) {
     const cards = valuess.map((x) => {
         return `
@@ -48,7 +58,10 @@ function showPages(valuess) {
             </div>
         </div>`;
     }).join('');
+    let oldValue = inputistan.value;
+    let newValue;
         if(inputistan.value != "") {
+            le
             document.getElementById("main").style.display = 'none';
             filtered.style.display = 'block';
         } else {
@@ -56,6 +69,7 @@ function showPages(valuess) {
             filtered.style.display = 'none';
             document.getElementById("notfound").style.display = 'none';
         }
+
     filtered.innerHTML = cards;
 }
 
