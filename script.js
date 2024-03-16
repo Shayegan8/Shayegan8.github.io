@@ -37,6 +37,8 @@ inputistan.addEventListener('keyup', (x) => {
     }
 });
 
+alert("kir");
+
 function showPages(valuess) {
     const cards = valuess.map((x) => {
         return `
@@ -50,6 +52,7 @@ function showPages(valuess) {
     }).join('');
         if(inputistan.value != "") {
             document.getElementById("main").style.display = 'none';
+            document.getElementById("notfound").style.display = 'none';
             filtered.style.display = 'block';
         } else {
             document.getElementById("main").style.display = 'block';
