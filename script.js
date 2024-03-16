@@ -255,11 +255,11 @@ inputistan.addEventListener('keyup', (x) => {
         filtered.style.display = 'none';
         document.getElementById("notfound").style.display = 'block';
     } else {
-        showPages(filtereds, true);
+        showPages(filtereds);
     }
 });
 
-function showPages(valuess, booli) {
+function showPages(valuess) {
     const cards = valuess.map((x) => {
         return `
             <div class="card p-4 ps-4 pe-4 m-2 bg-dark text-danger" style="width: 100%;">
@@ -281,4 +281,17 @@ function showPages(valuess, booli) {
     filtered.innerHTML = cards;
 }
 
-showPages(values, true);
+function redirectT(red) {
+    let current = location.href.split("/");
+    String.prototype.format
+    newStr = null;
+    for(var i = 0; i < current.length; i++) {
+        if(i == (current.length - 1)) {
+            newStr += `${red}`;
+        }
+        newStr += `${current[i]}/`;
+    }
+    return newStr;
+}
+
+showPages(values);

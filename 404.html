@@ -11,7 +11,7 @@
             background-repeat: no-repeat;
             background-size: cover;
             width: 100%;
-            height: 100vh;
+            height: 100%;
         }
     </style>
     <title>404</title>
@@ -43,7 +43,66 @@
             </form>
         </nav>
     </div>
-    <div class="container text-center">
+    <div class="jumbotron vertical-center">
+        <div id="pages" class="container-sm" style="display: none;"></div>
+    </div>
+    <script>
+let values = [
+    {
+        id: 1,
+        name: "arenamanager",
+        description: "About simple arenaManager",
+        href: "kir"
+    },
+    {
+        id: 2,
+        name: "Papijoy",
+        description: "papijoy",
+        href: "kos"
+    }
+];
+
+filtered = document.getElementById("pages");   
+const inputistan = document.getElementById("searchi");     
+inputistan.addEventListener('keyup', (x) => {
+    const inputString = x.target.value.toLowerCase();
+
+    let filtereds = values.filter((x) => {
+        return x.name.includes(inputString);
+    });
+    if(filtereds.length == 0) {
+        document.getElementById("main").style.display = 'none';
+        filtered.style.display = 'none';
+        document.getElementById("notfound").style.display = 'block';
+    } else {
+        showPages(filtereds);
+    }
+});
+
+function showPages(valuess) {
+    const cards = valuess.map((x) => {
+        return `
+            <div class="card p-4 ps-4 pe-4 m-2 bg-dark text-danger" style="width: 100%;">
+                <div class="card-body">
+                    <h5 class="card-title">${x.name}</h5>
+                    <p class="card-text">${x.description}</p>
+                    <a href="${x.href}" class="btn btn-dark">Check this post</a>
+            </div>
+        </div>`;
+    }).join('');
+        if(inputistan.value != "") {
+            document.getElementById("notfound").style.display = 'none';
+            filtered.style.display = 'block';
+        } else {
+            filtered.style.display = 'none';
+            document.getElementById("notfound").style.display = 'block';
+        }
+    filtered.innerHTML = cards;
+}
+
+showPages(values);
+    </script>
+    <div id="notfound" class="container text-center">
             <div class="position-absolute top-50 start-50 translate-middle">
                 <p class="h1 text-danger">Page not found</p>
             </div>
