@@ -37,8 +37,6 @@ inputistan.addEventListener('keyup', (x) => {
     }
 });
 
-alert("kir");
-
 function showPages(valuess) {
     const cards = valuess.map((x) => {
         return `
