@@ -239,6 +239,12 @@ let values = [
         name: "Papijoy",
         description: "papijoy",
         href: "kos"
+    },
+    {
+        id: 3,
+        name: "Sexistan Empire",
+        description: "The truth you should know",
+        href: "https://shayegan8.github.io/sexistan.html"
     }
 ];
 

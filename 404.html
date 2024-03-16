@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,6 +17,7 @@
     </style>
     <title>404</title>
 </head>
+
 <body class="d-flex flex-column min-vh-100">
     <div class="container-sm p-4">
         <nav class="navbar navbar-dark bg-dark p-3">
@@ -25,18 +27,18 @@
                     <a class="nav-link" href="https://github.com/Shayegan8" target="_blank">Home</a>
                 </li>
             </ul>
-            <a style="text-decoration: none;" class="nav-link text-primary p-2 me-auto navbar-nav-scroll" href="#" id="manage"
-                     role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Pages
-                    </a>
-                    <ul class="jumbotron vertical-center bg-dark dropdown-menu" aria-labelledby="manage">
-                        <li>
-                            <a class="dropdown-item text-danger" href="#">ArenaManager</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item text-danger" href="#">Papijoy</a>
-                        </li>
-                    </ul>
+            <a style="text-decoration: none;" class="nav-link text-primary p-2 me-auto navbar-nav-scroll" href="#"
+                id="manage" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Pages
+            </a>
+            <ul class="jumbotron vertical-center bg-dark dropdown-menu" aria-labelledby="manage">
+                <li>
+                    <a class="dropdown-item text-danger" href="#">ArenaManager</a>
+                </li>
+                <li>
+                    <a class="dropdown-item text-danger" href="#">Papijoy</a>
+                </li>
+            </ul>
             <form class="text-black form-inline mt-2 mt-md-0" style="width: 30%;">
                 <input class="bg-danger text-black form-control mr-sm-2 btn btn-outline-dark" id="searchi" type="text"
                     placeholder="Search" aria-label="search">
@@ -47,41 +49,47 @@
         <div id="pages" class="container-sm" style="display: none;"></div>
     </div>
     <script>
-let values = [
-    {
-        id: 1,
-        name: "arenamanager",
-        description: "About simple arenaManager",
-        href: "kir"
-    },
-    {
-        id: 2,
-        name: "Papijoy",
-        description: "papijoy",
-        href: "kos"
-    }
-];
+        let values = [
+            {
+                id: 1,
+                name: "arenamanager",
+                description: "About simple arenaManager",
+                href: "kir"
+            },
+            {
+                id: 2,
+                name: "Papijoy",
+                description: "papijoy",
+                href: "kos"
+            },
+            {
+                id: 3,
+                name: "Sexistan Empire",
+                description: "The truth you should know",
+                href: "https://shayegan8.github.io/sexistan.html"
+            }
+        ];
 
-filtered = document.getElementById("pages");   
-const inputistan = document.getElementById("searchi");     
-inputistan.addEventListener('keyup', (x) => {
-    const inputString = x.target.value.toLowerCase();
+        filtered = document.getElementById("pages");
+        const inputistan = document.getElementById("searchi");
+        inputistan.addEventListener('keyup', (x) => {
+            const inputString = x.target.value.toLowerCase();
 
-    let filtereds = values.filter((x) => {
-        return x.name.includes(inputString);
-    });
-    if(filtereds.length == 0) {
-        document.getElementById("main").style.display = 'none';
-        filtered.style.display = 'none';
-        document.getElementById("notfound").style.display = 'block';
-    } else {
-        showPages(filtereds);
-    }
-});
+            let filtereds = values.filter((x) => {
+                return x.name.includes(inputString);
+            });
+            if (filtereds.length == 0) {
+                document.getElementById("main").style.display = 'none';
+                filtered.style.display = 'none';
+                document.getElementById("notfound").style.display = 'block';
+            } else {
+                showPages(filtereds);
+            }
+        });
 
-function showPages(valuess) {
-    const cards = valuess.map((x) => {
-        return `
+        function showPages(valuess) {
+            const cards = valuess.map((x) => {
+                return `
             <div class="card p-4 ps-4 pe-4 m-2 bg-dark text-danger" style="width: 100%;">
                 <div class="card-body">
                     <h5 class="card-title">${x.name}</h5>
@@ -89,29 +97,31 @@ function showPages(valuess) {
                     <a href="${x.href}" class="btn btn-dark">Check this post</a>
             </div>
         </div>`;
-    }).join('');
-        if(inputistan.value != "") {
-            document.getElementById("notfound").style.display = 'none';
-            filtered.style.display = 'block';
-        } else {
-            filtered.style.display = 'none';
-            document.getElementById("notfound").style.display = 'block';
+            }).join('');
+            if (inputistan.value != "") {
+                document.getElementById("notfound").style.display = 'none';
+                filtered.style.display = 'block';
+            } else {
+                filtered.style.display = 'none';
+                document.getElementById("notfound").style.display = 'block';
+            }
+            filtered.innerHTML = cards;
         }
-    filtered.innerHTML = cards;
-}
 
-showPages(values);
+        showPages(values);
     </script>
     <div id="notfound" class="container text-center">
-            <div class="position-absolute top-50 start-50 translate-middle">
-                <p class="h1 text-danger">Page not found</p>
-            </div>
+        <div class="position-absolute top-50 start-50 translate-middle">
+            <p class="h1 text-danger">Page not found</p>
+        </div>
     </div>
     <footer class="mt-auto text-center text-white">
         <div class="container mt-1 text-center">
-            <a href="https://www.aparat.com/Mrmelon" target="_blank" style="text-decoration: none;" class="text-success">Aparat</a>
+            <a href="https://www.aparat.com/Mrmelon" target="_blank" style="text-decoration: none;"
+                class="text-success">Aparat</a>
             <p class="text-white">Copyright © 2024</p>
         </div>
     </footer>
 </body>
+
 </html>
