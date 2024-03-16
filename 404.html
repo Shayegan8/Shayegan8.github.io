@@ -7,8 +7,7 @@
     <meta content="Shayegan8" property="og:title">
     <meta content="Shayegan8 personal html!" property="og:description">
     <meta content="https://shayegan8.github.io/404.html" property="og:url">
-    <meta content="https://raw.githubusercontent.com/Shayegan8/Shayegan8.github.io/master/css/images/meloni.png"
-        property="og:image">
+    <meta content="https://raw.githubusercontent.com/Shayegan8/Shayegan8.github.io/master/css/images/meloni.png" property="og:image">
     <meta content="1000" property="og:image:height">
     <meta content="1000" property="org:image:width">
     <base href="https://shayegan8.github.io/404.html">
@@ -37,24 +36,22 @@
                     <a class="nav-link" href="https://github.com/Shayegan8" target="_blank">Home</a>
                 </li>
             </ul>
-            <a style="text-decoration: none;" class="nav-link text-primary p-2 me-auto navbar-nav-scroll" href="#"
-                id="manage" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Pages
-            </a>
-            <ul class="jumbotron vertical-center bg-dark dropdown-menu" aria-labelledby="manage">
-                <li>
-                    <a class="dropdown-item text-danger" href="#">ArenaManager</a>
-                </li>
-                <li>
-                    <a class="dropdown-item text-danger" href="#">Papijoy</a>
-                </li>
-                <li>
-                    <hr class="dropdown-divider bg-danger">
-                </li>
-                <li>
-                    <a class="dropdown-item text-danger" href="https://shayegan8.github.io/sexistan.html">Sexistan</a>
-                </li>
-            </ul>
+            <a style="text-decoration: none;" class="nav-link text-primary p-2 me-auto navbar-nav-scroll" href="#" id="manage"
+                     role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Pages
+                    </a>
+                    <ul class="jumbotron vertical-center bg-dark dropdown-menu" aria-labelledby="manage">
+                        <li>
+                            <a class="dropdown-item text-danger" href="#">ArenaManager</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item text-danger" href="#">Papijoy</a>
+                        </li>
+                        <li><hr class="dropdown-divider bg-danger"></li>
+                        <li>
+                            <a class="dropdown-item text-danger" href="https://shayegan8.github.io/sexistan.html">Sexistan</a>
+                        </li>
+                    </ul>
             <form class="text-black form-inline mt-2 mt-md-0" style="width: 30%;">
                 <input class="bg-danger text-black form-control mr-sm-2 btn btn-outline-dark" id="searchi" type="text"
                     placeholder="Search" aria-label="search">
@@ -65,7 +62,6 @@
         <div id="pages" class="container-sm" style="display: none;"></div>
     </div>
     <script>
-        // @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&dn=gpl-3.0.txt GPL-v3-or-Later
         let values = [
             {
                 id: 1,
@@ -104,16 +100,6 @@
             }
         });
 
-        inputistan.addEventListener('change', (x) => {
-            if (filtereds.length == 0) {
-                document.getElementById("main").style.display = 'none';
-                filtered.style.display = 'none';
-                document.getElementById("notfound").style.display = 'block';
-            } else {
-                showPages(filtereds);
-            }
-        });
-
         function showPages(valuess) {
             const cards = valuess.map((x) => {
                 return `
@@ -136,7 +122,6 @@
         }
 
         showPages(values);
-        // @license-end
     </script>
     <div id="notfound" class="container text-center">
         <div class="position-absolute top-50 start-50 translate-middle">
