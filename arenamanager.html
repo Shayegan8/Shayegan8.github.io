@@ -106,7 +106,7 @@
     <div id="main">
         <div class="container-md text-white">
             <p class="h1 m-4">ArenaManager API</p>
-            <p class="ms-5">ArenaManager its a library that maybe helps you to create your minigame plugins, in this tutorial we just cover how to manage your arena for more you need to check its <a class="text-primary" style="font-style: normal;" href="https://shayegan8.github.io/apidocs/index.html">javadoc</a> (even i didn't explain everything on javadocs LOL)</p>
+            <p class="ms-5 d-inline">ArenaManager its a library that maybe helps you to create your minigame plugins, in this tutorial we just cover how to manage your arena for more you need to check its</p> <a class="text-primary" style="font-style: normal;" href="https://shayegan8.github.io/apidocs/index.html">javadoc</a> <p class="ms-5 d-inline">(even i didn't explain everything on javadocs LOL)</p>
             <p class="h1 m-4">How to create arena?</p>
             <p class="h4 ms-5">Creating arena with static way</p>
             <row>
@@ -267,13 +267,13 @@
                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p class="sormei">Player</p> <p class="abi">player</p> = (<p class="sormei">Player</p>) <p class="abi">sender</p>;<br>
                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p class="narenji">if</p> (<p class="abi">sender</p>.<p class="sabz">hasPermission</p>(<p class="sormei">"arena.special"</p>)) {<br>
                                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <p class="abi">myCustomArena</p> = <p class="sormei">ArenaManager</p>.<p class="sabz">createArena</p>(<p class="sormei">"myCustomArena"</p>, <p class="sormei">2</p>, <p class="sormei">8</p>, <p class="sormei">10000</p>,
-                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p class="abi">player</p>.<p class="sabz">getLocation</p>(), <p class="sormei">"world"</p>);<br><br>
-                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p class="narenji">return true</p>;<br>
+                                                     <p class="abi">player</p>.<p class="sabz">getLocation</p>(), <p class="sormei">"world"</p>);<br>
                                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <p class="narenji">else if</p> (<p class="abi">sender</p>.<p class="sabz">hasPermission</p>(<p class="sormei">"arena.bullshit"</p>)) {<br>
                                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p class="abi">myCustomArena</p> = <p class="sormei1">ArenaManager</p>.<p class="sabz">arena</p>(<p class="sormei">0</p>, <p class="sormei">0</p>, <p class="sormei">0</p>, <p class="abi">player</p>.<p class="sabz">getLocation</p>(),<br>
                                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p class="sorati">STATES</p>.<p class="abi" style="font-weight: bold; font-display: i;"><i>INPROCESS</i></p>, <p class="sormei">"kossher"</p>, <p class="sormei">"world"</p>);<br>
                                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p class="narenji">return true</p>;<br>
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
 
                                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p class="narenji">return false</p>;<br>
                                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
