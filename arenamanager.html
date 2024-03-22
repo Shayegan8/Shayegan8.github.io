@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:name" content="Shayegan8">
+    <meta property="og:url" content="https://shayegan8.github.io/arenamanager.html">
+    <meta property="og:image"
+        content="https://raw.githubusercontent.com/Shayegan8/Shayegan8.github.io/master/css/images/meloni.png">
+    <meta property="og:image:width" content="1000">
+    <meta property="og:image:height" content="1000">
+    <meta content="#a52a2a" data-react-helmet="true" name="theme-color">
+    <base href="https://shayegan8.github.io/arenamanager.html">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="icon" href="css/images/melon.jpg">
+    <title>ArenaManager</title>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+    <div id="notfound" class="container text-center" style="display: none;">
+        <div class="position-absolute top-50 start-50 translate-middle">
+            <p class="h1 text-danger">Page not found</p>
+        </div>
+    </div>
+    <style>
+        @font-face {
+            font-family: vazir;
+            src: url(font/Vazirmatn-VariableFont_wght.ttf);
+        }
+
+        .sorati {
+            color: rgb(255, 128, 128);
+        }
+
+        .narenji {
+            color: rgb(206, 99, 0);
+        }
+
+        .javacode p {
+            display: inline;
+        }
+
+        .sormei {
+            color: rgb(27, 118, 153);
+        }
+
+        .sormei1 {
+            color: rgb(0, 127, 174)
+        }
+
+        .abi {
+            color: rgb(111, 197, 238);
+        }
+
+        .sabz {
+            color: rgb(106, 217, 17);
+        }
+
+        body {
+            background-image: url(css/images/stars.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <div class="container-sm p-4">
+        <nav class="navbar navbar-dark bg-dark p-3">
+            <a class="navbar-brand" href="https://shayegan8.github.io">Shayegan8</a>
+            <ul class="navbar-nav navbar-nav-scroll">
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/Shayegan8" target="_blank">Home</a>
+                </li>
+            </ul>
+            <a style="text-decoration: none;" class="nav-link text-primary p-2 me-auto navbar-nav-scroll" href="#"
+                id="manage" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Pages
+            </a>
+            <ul class="jumbotron vertical-center bg-dark dropdown-menu" aria-labelledby="manage">
+                <li>
+                    <a class="dropdown-item text-danger" href="#">ArenaManager</a>
+                </li>
+                <li>
+                    <a class="dropdown-item text-danger" href="#">Papijoy</a>
+                </li>
+                <li>
+                    <hr class="dropdown-divider bg-danger">
+                </li>
+                <li>
+                    <a class="dropdown-item text-danger" href="https://shayegan8.github.io/sexistan.html">Sexistan</a>
+                </li>
+            </ul>
+            <form class="text-black form-inline mt-2 mt-md-0" style="width: 30%;">
+                <input class="bg-danger text-black form-control mr-sm-2 btn btn-outline-dark" id="searchi" type="text"
+                    placeholder="Search" aria-label="search">
+            </form>
+        </nav>
+    </div>
+    <div class="jumbotron vertical-center">
+        <div id="pages" class="container-sm" style="display: none;"></div>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+
+    <div id="main">
+        <div class="container-md text-white">
+            <p class="h1 m-4">ArenaManager API</p>
+            <p class="ms-5">ArenaManager its a library that maybe helps you to create your minigame plugins, in this tutorial we just cover how to manage your arena for more you need to check its <a style="font-style: normal;">javadoc</a></p>
+            <p class="h1 m-4">How to create arena?</p>
+            <p class="h4 ms-5">Creating arena with static way</p>
+            <row>
+                <div class="col-md-12 ms-2 overflow-x-scroll javacode pt-2 p-3"
+                    style="background-color: black; resize: both;">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <p class="narenji">
+                                        import
+                                    <p class="text-white">arena.ArenaManager;</p>
+                                    <br>
+                                    <br>
+                                    <p class="narenji">public class</p>
+                                    <p class="sormei">ArenaExample</p>&nbsp;&nbsp;{
+                                    </p>
+
+                                    <br><br>
+                                    <p class="narenji">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;private
+                                    <p class="sormei d-inline">Arena</p>
+
+                                    <p class="abi"> arena</p>
+                                    <p class="d-inline">;</p>
+                                    </p>
+                                    <p></p>
+                                    <br>
+                                    <br>
+                                    <p class="narenji">&nbsp;&nbsp;&nbsp;&nbsp;public
+                                    <p class="" style="color: green;">ArenaExample
+                                    <p class=""> (
+                                    <p class="sormei">String
+                                    <p class="abi">arenaName,
+                                    <p class="narenji">int
+                                    <p class="abi">min</p>,
+                                    <p class="narenji">int
+                                    <p class="abi">max</p>,
+                                    <p class="narenji">int
+                                    <p class="abi">time</p>,
+                                    <p class="sormei">Location
+                                    <p class="abi">waitingSpawn,
+                                    <p class="sormei">String
+                                    <p class="abi">world
+                                    <p class="text-white">)&nbsp;&nbsp;{</p><br></p>
+                                    </p>
+
+                                    </p>
+                                    </p>
+                                    </p>
+
+                                    <p class="text-white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <p class="narenji">this</p>.<p class="abi">arena</p> =
+                                    <p class="narenji"></p>
+                                    <p class="narenji">new</p>
+                                    <p class="sabz">Arena</p>(<p class="abi">min</p>,<p class="abi">max</p>,<p
+                                        class="abi">
+                                        time
+                                    </p>,<p class="abi">waitingSpawn</p>, <p class="abi">arenaName</p>,<p class="abi">
+                                        world
+                                    </p>);</p>
+                                    <br>
+                                    <p class="text-white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <p class="sormei1">ArenaManager</p>.<p class="sabz">addInARENALIST</p>(<p
+                                        class="abi">arena</p>);</p>
+                                    <br>
+                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+                                    <br>
+                                    <br>
+                                    <p class="narenji">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;public
+                                    <p class="sormei">Arena</p>
+                                    <p style="color: green;">getArena
+                                    <p class="text-white">() {
+                                    <p class="narenji"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return
+                                    <p class="abi">myArena</p>
+                                    <p class="text-white">;</p>
+                                    </p><br>&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+                                    </p>
+                                    </p>
+
+                                    <br>
+                                    <br>
+                                    <p>}</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-0"></div>
+            </row>
+
+
+            <div class="row">
+                <div class="col-12 m-1">
+                    <p class="m-1 p-1">so in above box we created a <code>Arena</code> object with its constructor, so
+                        for using ArenaManager methods we have to add this arena to ARENALIST, however
+                        <code>addInARENALIST(Arena arena)</code> if you wan't announce users in this function you need
+                        to use <code>addInARENALIST(@Nullable CommandSender sender, Plugin instnace, Arena arena)</code>
+                    </p>
+                    <p class="h4 ms-4">Creating arena with dynamic way</p>
+                </div>
+                <div class="col-0">
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 ms-3 overflow-x-scroll javacode pt-2 p-3"
+                    style="min-width: 1000px;background-color: black; resize: both;">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <p class="narenji">package</p> arena;<br><br>
+
+                                    
+                                    <p class="narenji">import</p> java.io.IOException;<br>
+                                    <p class="narenji">import</p> java.util.List;<br>
+
+                                    <p class="narenji">import</p> org.bukkit.command.Command;<br>
+                                    <p class="narenji">import</p> org.bukkit.command.CommandExecutor;<br>
+                                    <p class="narenji">import</p> org.bukkit.command.CommandSender;<br>
+                                    <p class="narenji">import</p> org.bukkit.entity.Player;<br>
+                                    <p class="narenji">import</p> org.bukkit.plugin.java.JavaPlugin;<br>
+                                    <p class="narenji">import</p> arena.Arena;<br>
+                                    <p class="narenji">import</p> arena.ArenaManager;<br><br>
+
+                                    <p style="color: gray;">@ArenaMaker</p>(<p class="abi">arenas</p> = { <p class="sormei">"firstArena"</p>, <p class="sormei">"lastArena"</p>})<br>
+                                    <p class="narenji">public class</p> <p class="sormei1">Example</p> <p class="narenji">extends</p> <p class="sormei">JavaPlugin</p> <p class="narenji">implements</p> <p class="abi">CommandExecutor</p> {<br><br>
+
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<p class="narenji">private static</p> <p class="sormei1">Example</p> <p class="abi">instance</p>;<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<p class="narenji">private static</p> <p class="sormei1">List</p>&lt;<p class="sormei1">Arena</p>&gt; <p class="abi">savedARENALIST</p>;<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<p class="narenji">private static</p> <p class="sormei1">Arena</p> <p class="abi">myCustomArena</p>;<br><br>
+
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<p class="narenji">public void</p> <p style="color: green;">onEnable</p>() {<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <p class="abi">instance</p> = <p class="narenji">this</p>;<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p class="sabz">getCommand</p>(<p class="sormei1">"createMyArena"</p>).<p class="sabz">setExecutor</p>(<p class="narenji">this</p>);<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p class="sormei1">ArenaManager</p>.<p class="sabz">loadArenas</p>();<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p class="abi">savedARENALIST</p> = <p class="sormei1">ArenaManager</p>.<p class="sabz">loadArenasByAnnotation</p>(<p class="sabz">getClass</p>());<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p class="narenji">try</p> {<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p class="sormei1">ArenaManager</p>.<p class="sabz">loadGenerators</p>(<p class="sormei">"firstArena"</p>);<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <p class="narenji">catch</p> (<p class="sormei1">IOException</p> <p class="abi">e</p>) {<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p class="abi">e</p>.<p class="sabz">printStackTrace</p>();<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p class="narenji">try</p> {<br>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p class="sormei1">ArenaManager</p>.<p class="sabz">loadNPCS</p>(<p class="sormei">"lastArena"</p>);<br>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } <p class="narenji">catch</p> (<p class="sormei1">IOException</p> <p class="abi">e</p>) {<br>
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p class="abi">e</p>.<p class="sabz">printStackTrace</p>();<br>
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;<p style="color: gray;">@Override</p><br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;<p class="narenji">public boolean</p> <p style="color: green;">onCommand</p>(<p class="sormei1">CommandSender</p> <p class="abi">sender</p>, <p class="sormei">Command</p> <p class="abi">command</p>, <p class="sormei1">String</p> <p class="abi">label</p>,
+                                        <p class="sormei1">String</p>[] <p class="abi">args</p>) {<br><br>
+
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p class="narenji">if</p> (<p class="abi">sender</p> <p class="narenji">instanceof</p> <p class="sormei">Player</p>) {<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p class="sormei">Player</p> <p class="abi">player</p> = (<p class="sormei">Player</p>) <p class="abi">sender</p>;<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p class="narenji">if</p> (<p class="abi">sender</p>.<p class="sabz">hasPermission</p>(<p class="sormei">"arena.special"</p>)) {<br>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <p class="abi">myCustomArena</p> = <p class="sormei">ArenaManager</p>.<p class="sabz">createArena</p>(<p class="sormei">"myCustomArena"</p>, <p class="sormei">2</p>, <p class="sormei">8</p>, <p class="sormei">10000</p>,
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p class="abi">player</p>.<p class="sabz">getLocation</p>(), <p class="sormei">"world"</p>);<br><br>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p class="narenji">return true</p>;<br>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <p class="narenji">else if</p> (<p class="abi">sender</p>.<p class="sabz">hasPermission</p>(<p class="sormei">"arena.bullshit"</p>)) {<br>
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p class="abi">myCustomArena</p> = <p class="sormei1">ArenaManager</p>.<p class="sabz">arena</p>(<p class="sormei">0</p>, <p class="sormei">0</p>, <p class="sormei">0</p>, <p class="abi">player</p>.<p class="sabz">getLocation</p>(),<br>
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p class="sorati">STATES</p>.<p class="abi" style="font-weight: bold; font-display: i;"><i>INPROCESS</i></p>, <p class="sormei">"kossher"</p>, <p class="sormei">"world"</p>);<br>
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p class="narenji">return false</p>;<br>
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p class="narenji">public static</p> <p class="sormei">List</p><Arena> <p style="color: green;">getSavedARENALIST</p>() {<br>
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p class="narenji">return</p> <p class="abi">savedARENALIST</p>;<br>
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;<p class="narenji">public static</p> <p class="sormei1">Example</p> <p style="color: green;">getInstance</p>() {<br>
+                                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p class="narenji">return</p> <p class="abi">instance</p>;<br>
+                                                                &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+                                                                &nbsp;&nbsp;&nbsp;&nbsp;<p class="narenji">public</p> <p class="sormei">Arena</p> <p style="color: green;">getMyCustomArena</p>() {<br>
+                                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p class="narenji">return</p> <p class="abi">myCustomArena</p>;<br>
+                                                                    &nbsp;&nbsp;&nbsp;&nbsp;}<br><br><br>
+
+                                            }
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="col-0">
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-11 text-white m-3">So in provided code we have a bukkit main class that implements a CommandExecutor and with a <code>@ArenaMaker</code> annotation that marks arenas for us, if we go little down we can see a instance, a list that saves arenas in itself in onEnable() function (you can just execute <code>loadArenasByAnnotation()</code> function to just change the ARENALIST), also we want to save our custom arena with <code>myCustomArena</code> variable that is visible.<br>so in onEnable() we loaded generators and npcs by the specified functions which they're throws IOException cause of reading the config file (plugins/arenaName/arenaName.dcnf), loadArenas can handle all of this things i say but this is just a example.<br>You don't need to do all of above code its just the sample like as i said<br></div>
+                <div class="col-1"></div>
+            </div>
+        </div>
+        
+
+        <br>
+    </div>
+
+    <footer class="mt-auto text-center text-white">
+        <div class="container mt-1 text-center">
+            <a href="https://www.aparat.com/Mrmelon" target="_blank" style="text-decoration: none;"
+                class="text-success">Aparat</a>
+            <p class="text-white">Copyright © 2024</p>
+        </div>
+    </footer>
+</body>
+
+</html>
