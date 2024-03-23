@@ -66,7 +66,7 @@
             height: 100%;
         }
     </style>
-    <div class="container-sm p-4">
+    <div>
         <nav class="navbar navbar-dark bg-dark p-3">
             <a class="navbar-brand" href="https://shayegan8.github.io">Shayegan8</a>
             <ul class="navbar-nav navbar-nav-scroll">
@@ -74,13 +74,14 @@
                     <a class="nav-link" href="https://github.com/Shayegan8" target="_blank">Home</a>
                 </li>
             </ul>
-            <a style="text-decoration: none;" class="nav-link text-primary p-2 me-auto navbar-nav-scroll" href="#"
-                id="manage" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a style="text-decoration: none;" class="nav-link text-primary p-2 navbar-nav-scroll" href="#" id="manage"
+                role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Pages
             </a>
             <ul class="jumbotron vertical-center bg-dark dropdown-menu" aria-labelledby="manage">
                 <li>
-                    <a class="dropdown-item text-danger" href="#">ArenaManager</a>
+                    <a class="dropdown-item text-danger"
+                        href="https://shayegan8.github.io/arenamanager.html">ArenaManager</a>
                 </li>
                 <li>
                     <a class="dropdown-item text-danger" href="#">Papijoy</a>
@@ -92,7 +93,9 @@
                     <a class="dropdown-item text-danger" href="https://shayegan8.github.io/sexistan.html">Sexistan</a>
                 </li>
             </ul>
-            <form class="text-black form-inline mt-2 mt-md-0" style="width: 30%;">
+            <a style="text-decoration: none; background-color: rgb(245, 167, 0); border: 1px solid rgb(245, 167, 0); border-radius: 10px; text-align: center; color: black; font-weight: bolder; font-size: x-small;"
+                class="p-1 m-1 navbar-item me-auto" href="https://shayegan8.github.io/apidocs">Javadoc</a>
+            <form class="text-black form-inline mt-2 mt-md-0" style="width: 20%;">
                 <input class="bg-danger text-black form-control mr-sm-2 btn btn-outline-dark" id="searchi" type="text"
                     placeholder="Search" aria-label="search">
             </form>
@@ -105,10 +108,11 @@
 
     <div id="main">
         <div class="container-md text-white">
-            <p class="h1 m-4">ArenaManager API</p>
-            <p class="ms-5 d-inline">ArenaManager its a library that maybe helps you to create your minigame plugins, in this tutorial we just cover how to manage your arena for more you need to check its</p> <a class="text-primary" style="text-decoration: none;" href="https://shayegan8.github.io/apidocs/index.html">javadoc</a> <p class="ms-5 d-inline">(even i didn't explain everything on javadocs LOL)</p>
-            <p class="h1 m-4">How to create arena?</p>
-            <p class="h4 ms-5">Creating arena with static way</p>
+            <p class="h1 mt-3">ArenaManager API</p>
+            <p class="d-inline">ArenaManager its a library that maybe helps you to create your minigame plugins, in this tutorial we just cover how to manage your arena for more you need to check its javadoc
+                (even i didn't explain everything on javadocs LOL)</p>
+            <p class="h1 mt-3">How to create arena?</p>
+            <p class="h4 mt-2 ms-2">Creating arena with static way</p>
             <row>
                 <div class="col-sm-12 ms-2 overflow-x-scroll javacode pt-2 p-3"
                     style="background-color: black; resize: both;">
@@ -201,13 +205,13 @@
 
 
             <div class="row">
-                <div class="col-12 m-1">
-                    <p class="m-1 p-1">so in above box we created a <code>Arena</code> object with its constructor, so
+                <div class="col-12">
+                    <p class="mt-2 m-1 p-1">so in above box we created a <code>Arena</code> object with its constructor, so
                         for using ArenaManager methods we have to add this arena to ARENALIST, however
                         <code>addInARENALIST(Arena arena)</code> if you wan't announce users in this function you need
                         to use <code>addInARENALIST(@Nullable CommandSender sender, Plugin instnace, Arena arena)</code>
                     </p>
-                    <p class="h4 ms-4">Creating arena with dynamic way</p>
+                    <p class="h4 mt-2 ms-2">Creating arena with dynamic way</p>
                 </div>
                 <div class="col-0">
 
@@ -215,7 +219,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-12 ms-2 overflow-x-scroll javacode pt-2 p-3"
-                    style="background-color: black; resize: both;">
+                style="background-color: black; resize: both;">
                     <table>
                         <tbody>
                             <tr>
@@ -301,10 +305,8 @@
 
                 </div>
             </div>
-            <div class="row">
-                <div class="col-11 text-white m-3">So in provided code we have a bukkit main class that implements a CommandExecutor and with a <code>@ArenaMaker</code> annotation that marks arenas for us, if we go little down we can see a instance, a list that saves arenas in itself in onEnable() function (you can just execute <code>loadArenasByAnnotation()</code> function to just change the ARENALIST), also we want to save our custom arena with <code>myCustomArena</code> variable that is visible.<br>so in onEnable() we loaded generators and npcs by the specified functions which they're throws IOException cause of reading the config file (plugins/arenaName/arenaName.dcnf), loadArenas can handle all of this things i say but this is just a example.<br>You don't need to do all of above code its just the sample like as i said<br></div>
-                <div class="col-1"></div>
-            </div>
+                <div class="text-white mt-2 ms-2">So in provided code we have a bukkit main class that implements a CommandExecutor and with a <code>@ArenaMaker</code> annotation that marks arenas for us, if we go little down we can see a instance, a list that saves arenas in itself in onEnable() function (you can just execute <code>loadArenasByAnnotation()</code> function to just change the ARENALIST), also we want to save our custom arena with <code>myCustomArena</code> variable that is visible.<br>so in onEnable() we loaded generators and npcs by the specified functions which they're throws IOException cause of reading the config file (plugins/arenaName/arenaName.dcnf), loadArenas can handle all of this things i say but this is just a example.<br>You don't need to do all of above code its just the sample like as i said<br></div>
+
         </div>
         
 

@@ -63,6 +63,7 @@
         <div id="pages" class="container-sm" style="display: none;"></div>
     </div>
     <script>
+        // @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&dn=gpl-3.0.txt GPL-v3-or-Later
         let values = [
             {
                 id: 1,
@@ -104,7 +105,7 @@
         function showPages(valuess) {
             const cards = valuess.map((x) => {
                 return `
-            <div class="card p-4 ps-4 pe-4 m-2 bg-dark text-danger" style="width: 100%;">
+            <div class="card p-4 ps-4 pe-4 m-2 text-danger" style="width: 100%; background-color: black;">
                 <div class="card-body">
                     <h5 class="card-title">${x.name}</h5>
                     <p class="card-text">${x.description}</p>
@@ -123,6 +124,7 @@
         }
 
         showPages(values);
+        // @license-end
     </script>
     <div id="notfound" class="container text-center">
         <div class="position-absolute top-50 start-50 translate-middle">
