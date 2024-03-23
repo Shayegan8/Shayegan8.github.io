@@ -40,8 +40,8 @@ inputistan.addEventListener('keyup', (x) => {
 function showPages(valuess) {
     const cards = valuess.map((x) => {
         return `
-            <div class="card p-4 ps-4 pe-4 m-2 bg-dark text-danger" style="width: 100%;">
-                <div class="card-body">
+            <div class="card p-4 ps-4 pe-4 m-2 text-danger" style="width: 100%; background-color: black;">
+                <div class="card-body" style="background-color: black;">
                     <h5 class="card-title">${x.name}</h5>
                     <p class="card-text">${x.description}</p>
                     <a href="${x.href}" class="btn btn-dark">Check this post</a>
