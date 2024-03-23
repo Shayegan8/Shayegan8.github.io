@@ -4,7 +4,7 @@ let values = [
         id: 1,
         name: "arenamanager",
         description: "About simple arenaManager",
-        href: "kir"
+        href: "https://shayegan8.github.io/arenamanager.html"
     },
     {
         id: 2,
