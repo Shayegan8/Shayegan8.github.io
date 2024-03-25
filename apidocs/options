@@ -1,0 +1,24 @@
+-classpath
+'/home/Shayegan8/Desktop/workspace/SimpleArenaManager/lib/spigot-1.8.8.jar'
+-encoding
+'UTF-8'
+-protected
+-sourcepath
+'/home/Shayegan8/Desktop/workspace/SimpleArenaManager/src'
+-author
+-bottom
+'Copyright &#169; 2024. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'/home/Shayegan8/Desktop/workspace/SimpleArenaManager/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'simplearenamanager 0.0.9-BETA API'
+-linkoffline
+'https://docs.oracle.com/javase/8/docs/api' '/home/Shayegan8/Desktop/workspace/SimpleArenaManager/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'simplearenamanager 0.0.9-BETA API'
