@@ -3,7 +3,7 @@
 addEventListener('resize', function() {
 
     const element = document.getElementById('oscroll');
-    if (element.scrollWidth > element.clientWidth) {
+    if (element.scrollWidth < element.clientWidth) {
         element.style.overflowX = 'scroll';
     } else {
         element.style.overflowX = 'auto';
