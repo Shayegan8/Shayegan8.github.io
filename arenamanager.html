@@ -65,6 +65,11 @@
             width: 100%;
             height: 100%;
         }
+
+        .oscroll {
+            overflow-x: auto;
+            text-wrap: nowrap;
+        }
     </style>
             <nav class="container-md navbar navbar-dark bg-dark p-3">
                 <a class="navbar-brand" href="https://shayegan8.github.io">Shayegan8</a>
@@ -111,9 +116,9 @@
                 (even i didn't explain everything on javadocs LOL)</p>
             <p class="h1 mt-3">How to create arena?</p>
             <p class="h4 mt-2 ms-2">Creating arena with static way</p>
-            <row>
-                <div class="col-sm-12 ms-2 overflow-x-scroll javacode pt-2 p-3"
-                    style="background-color: black; resize: both;">
+            <div class="row">
+                <div class="col-sm-12 ms-2 overflow-scroll javacode pt-2 p-3 oscroll"
+                    style="background-color: black; resize: both; ">
                     <table>
                         <tbody>
                             <tr>
@@ -199,8 +204,8 @@
                     </table>
                 </div>
                 <div class="col-0"></div>
-            </row>
-
+            </div>
+            <script type="text/javascript" src="overflow.js"></script>
 
             <div class="row">
                 <div class="col-12">
