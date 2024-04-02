@@ -37,6 +37,14 @@ inputistan.addEventListener('keyup', (x) => {
     }
 });
 
+function showpages() {
+    if (document.getElementById('bar').style.display != 'flex') {
+        document.getElementById('bar').style.display = 'flex';
+    } else {
+        document.getElementById('bar').style.display = 'none';
+    }
+}
+
 function showPages(valuess) {
     const cards = valuess.map((x) => {
         return `
