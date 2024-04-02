@@ -37,7 +37,7 @@ inputistan.addEventListener('keyup', (x) => {
     }
 });
 
-function showpages() {
+function showp() {
     if (document.getElementById('bar').style.display != 'flex') {
         document.getElementById('bar').style.display = 'flex';
     } else {
