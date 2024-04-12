@@ -20,15 +20,15 @@ let values = [
     }
 ];
 
-filtered = document.getElementById("pages");   
-const inputistan = document.getElementById("searchi");     
+filtered = document.getElementById("pages");
+const inputistan = document.getElementById("searchi");
 inputistan.addEventListener('keyup', (x) => {
     const inputString = x.target.value.toLowerCase();
 
     let filtereds = values.filter((x) => {
         return x.name.includes(inputString);
-    });
-    if(filtereds.length == 0) {
+    })
+    if (filtereds.length == 0) {
         document.getElementById("main").style.display = 'none';
         filtered.style.display = 'none';
         document.getElementById("notfound").style.display = 'block';
@@ -36,6 +36,15 @@ inputistan.addEventListener('keyup', (x) => {
         showPages(filtereds);
     }
 });
+
+function res() {
+    if(document.getElementById("shitass").style.display == 'none') {
+        document.getElementById("shitass").style.display = 'flex';
+    } else {
+        document.getElementById("shitass").style.display = 'none';   
+    }
+    
+}
 
 function showp() {
     if (document.getElementById('bar').style.display != 'flex') {
@@ -56,15 +65,15 @@ function showPages(valuess) {
             </div>
         </div>`;
     }).join('');
-        if(inputistan.value != "") {
-            document.getElementById("main").style.display = 'none';
-            document.getElementById("notfound").style.display = 'none';
-            filtered.style.display = 'block';
-        } else {
-            document.getElementById("main").style.display = 'block';
-            filtered.style.display = 'none';
-            document.getElementById("notfound").style.display = 'none';
-        }
+    if (inputistan.value != "") {
+        document.getElementById("main").style.display = 'none';
+        document.getElementById("notfound").style.display = 'none';
+        filtered.style.display = 'block';
+    } else {
+        document.getElementById("main").style.display = 'block';
+        filtered.style.display = 'none';
+        document.getElementById("notfound").style.display = 'none';
+    }
     filtered.innerHTML = cards;
 }
 
@@ -72,8 +81,8 @@ function redirectT(red) {
     let current = location.href.split("/");
     String.prototype.format
     newStr = null;
-    for(var i = 0; i < current.length; i++) {
-        if(i == (current.length - 1)) {
+    for (var i = 0; i < current.length; i++) {
+        if (i == (current.length - 1)) {
             newStr += `${red}`;
         }
         newStr += `${current[i]}/`;
