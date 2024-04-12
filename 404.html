@@ -25,6 +25,12 @@
             width: 100%;
             height: 100%;
         }
+
+        .shitass {
+            overflow: hidden;
+            width: 40px;
+            height: 46px;
+        }
     </style>
     <title>404</title>
 </head>
@@ -47,12 +53,12 @@
                 </div>
             </li>
         </ul>
-        <a style="text-decoration: none;" class="text-primary p-2" href="#" id="manage" onclick="showp()" role="button">
+        <a style="text-decoration: none;" class="text-primary p-2" id="manage" onclick="showp()" role="button">
             Pages
         </a>
         <a style="text-decoration: none; background-color: rgb(245, 167, 0); border: 1px solid rgb(245, 167, 0); border-radius: 10px; text-align: center; color: black; font-weight: bolder; font-size: x-small;"
             class="p-1 m-1 navbar-item me-auto" href="https://shayegan8.github.io/apidocs">Javadoc</a>
-        <form class="text-black form-inline mt-2 mt-md-0" style="width: 20%;">
+        <form class="text-black form-inline mt-2 mt-md-0" style="width: 20%;" onkeyup="">
             <input class="bg-danger text-black form-control mr-sm-2 btn btn-outline-dark" id="searchi" type="text"
                 placeholder="Search" aria-label="search">
         </form>
@@ -97,14 +103,57 @@
             const inputString = x.target.value.toLowerCase();
 
             let filtereds = values.filter((x) => {
-                return x.name.includes(inputString);
-            });
+                let i = 0;
+
+                outshit: while (i <= values.length) {
+                    const str = values[i].name;
+                    let binded_inp = inputString;
+                    let j = 0;
+                    let add_it = false;
+                    while (j <= binded_inp.length) {
+                        if (str.includes(binded_inp.charAt(j))) {
+                            add_it = true;
+                        } else {
+                            add_it = false;
+                        }
+                        j++;
+                    }
+                    if (add_it) {
+                        return str;
+                    } else {
+                        break outshit;
+                    }
+                    i++;
+                }
+            }).filter((x) => x.name.includes(inputString));
+
             if (filtereds.length == 0) {
                 document.getElementById("main").style.display = 'none';
                 filtered.style.display = 'none';
                 document.getElementById("notfound").style.display = 'block';
             } else {
-                showPages(filtereds);
+                const cards = filtereds.map((x) => {
+                    return `
+            <div class="card p-4 ps-4 pe-4 m-2 text-danger" style="width: 100%; background-color: black;">
+                <div class="card-body">
+                    <h5 class="card-title">${x.name}</h5>
+                    <p class="card-text">${x.description}</p>
+                    <a href="${x.href}" class="btn btn-dark">Check this post</a>
+            </div>
+        </div>`;
+                }).join('');
+                if (inputistan.value != "") {
+                    document.getElementById("notfound").style.display = 'none';
+                    filtered.style.display = 'block';
+                } else {
+                    filtered.style.display = 'none';
+                    document.getElementById("notfound").style.display = 'block';
+                }
+                filtered.innerHTML = cards;
+            }
+            if (inputistan.value != "") {
+                document.getElementById("notfound").style.display = 'none';
+                filtered.style.display = 'block';
             }
         });
 
