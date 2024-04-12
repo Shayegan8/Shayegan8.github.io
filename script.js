@@ -8,42 +8,95 @@ let values = [
     },
     {
         id: 2,
-        name: "Papijoy",
+        name: "papijoy",
         description: "papijoy",
         href: "kos"
     },
     {
         id: 3,
-        name: "Sexistan Empire",
+        name: "sexistan empire",
         description: "The truth you should know",
         href: "https://shayegan8.github.io/sexistan.html"
     }
 ];
 
-filtered = document.getElementById("pages");
-const inputistan = document.getElementById("searchi");
+inputistan = document.getElementById("searchi");
 inputistan.addEventListener('keyup', (x) => {
-    const inputString = x.target.value.toLowerCase();
+
+    filtered = document.getElementById("pages");
+    const inputString = x.currentTarget.value.toLowerCase();
+
+    /**
+     * let filtereds = values.filter((y) => {
+        return y.name.includes(inputString);
+    })
+     */
 
     let filtereds = values.filter((x) => {
-        return x.name.includes(inputString);
-    })
+        let i = 0;
+
+        outshit: while (i <= values.length) {
+            const str = values[i].name;
+            let binded_inp = inputString;
+            let j = 0;
+            let add_it = false;
+            while (j <= binded_inp.length) {
+                if (str.includes(binded_inp.charAt(j))) {
+                    add_it = true;
+                } else {
+                    add_it = false;
+                }
+                j++;
+            }
+            if (add_it) {
+                return str;
+            } else {
+                break outshit;
+            }
+            i++;
+        }
+    }).filter((x) => x.name.includes(inputString));
+
     if (filtereds.length == 0) {
         document.getElementById("main").style.display = 'none';
         filtered.style.display = 'none';
         document.getElementById("notfound").style.display = 'block';
     } else {
-        showPages(filtereds);
+        const cards = filtereds.map((x) => {
+            return `
+                <div class="card p-4 ps-4 pe-4 m-2 text-danger" style="width: 100%; background-color: black;">
+                    <div class="card-body" style="background-color: black;">
+                        <h5 class="card-title">${x.name}</h5>
+                        <p class="card-text">${x.description}</p>
+                        <a href="${x.href}" class="btn btn-dark">Check this post</a>
+                </div>
+            </div>`;
+        }).join('');
+
+        document.getElementById("main").style.display = 'none';
+        document.getElementById("notfound").style.display = 'none';
+        filtered.style.display = 'block';
+        if (inputistan.value == "") {
+            document.getElementById("main").style.display = 'block';
+            filtered.style.display = 'none';
+            document.getElementById("notfound").style.display = 'none';
+        }
+        filtered.innerHTML = cards;
+    }
+    if (inputistan.value == "") {
+        document.getElementById("main").style.display = 'block';
+        filtered.style.display = 'none';
+        document.getElementById("notfound").style.display = 'none';
     }
 });
 
 function res() {
-    if(document.getElementById("shitass").style.display == 'none') {
+    if (document.getElementById("shitass").style.display == 'none') {
         document.getElementById("shitass").style.display = 'flex';
     } else {
-        document.getElementById("shitass").style.display = 'none';   
+        document.getElementById("shitass").style.display = 'none';
     }
-    
+
 }
 
 function showp() {
@@ -65,11 +118,11 @@ function showPages(valuess) {
             </div>
         </div>`;
     }).join('');
-    if (inputistan.value != "") {
-        document.getElementById("main").style.display = 'none';
-        document.getElementById("notfound").style.display = 'none';
-        filtered.style.display = 'block';
-    } else {
+
+    document.getElementById("main").style.display = 'none';
+    document.getElementById("notfound").style.display = 'none';
+    filtered.style.display = 'block';
+    if (inputistan.value == "") {
         document.getElementById("main").style.display = 'block';
         filtered.style.display = 'none';
         document.getElementById("notfound").style.display = 'none';
