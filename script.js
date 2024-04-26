@@ -99,12 +99,18 @@ function res() {
 
 }
 
+var a = document.getElementById('bar')
 function showp() {
-    if (document.getElementById('bar').style.display != 'flex') {
-        document.getElementById('bar').style.display = 'flex';
-    } else {
-        document.getElementById('bar').style.display = 'none';
-    }
+    a.classList.forEach((x) => {
+        alert(x)
+    });
+if(a.classList.contains("fade-in t-1")) {
+    a.classList.remove("fade-in t-1");
+    a.classList.add("fade-out t-1");
+} else {
+    a.classList.remove("fade-out t-1");
+    a.classList.add("fade-in t-1");
+}
 }
 
 function showPages(valuess) {
