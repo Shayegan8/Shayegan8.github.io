@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"arena"},{"l":"arena.event"},{"l":"arena.threads"},{"l":"customs"},{"l":"inventory"},{"l":"npc"},{"l":"scoreboard"}];updateSearchResults();

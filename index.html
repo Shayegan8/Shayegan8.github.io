@@ -5,163 +5,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Shayegan8" property="og:title">
-    <meta content="Shayegan8 personal html!" property="og:description">
+    <meta content="Shayegan8 website" property="og:description">
     <meta content="https://shayegan8.github.io" property="og:url">
     <meta name="og:image"
-        content="https://raw.githubusercontent.com/Shayegan8/Shayegan8.github.io/master/css/images/meloni.png">
+        content="https://raw.githubusercontent.com/Shayegan8/Shayegan8.github.io/master/pictures/assframe.png">
     <meta property="og:image:width" content="1000" />
     <meta property="og:image:height" content="1000" />
     <meta content="#a52a2a" data-react-helmet="true" name="theme-color">
     <base href="https://shayegan8.github.io/index.html">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="pictures/assframe.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="css/style.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="icon" href="css/images/melon.jpg">
-    <title>Shayegan8 personal website</title>
+    <title>Shayegan8 website</title>
 </head>
 
-<body class="d-flex flex-column min-vh-100">
-    <style>
-        body {
-            background-image: url(css/images/stars.jpg);
-            background-repeat: no-repeat;
-            background-size: cover;
-            width: 100%;
-            height: 100%;
-        }
+<body>
+    <ul class="navbar">
+        <li class="texts">Shayegan8</li>
+        <li class="texts"><i class="fa fa-github"></i> </li>
+        <li><img src="pictures/pixil-frame-0.png" class="pixel0"></li>
+    </ul>
 
-        .shitass {
-            overflow: hidden;
-            width: 40px;
-            height: 46px;
-        }
-    </style>
-    <div id="notfound" class="container text-center" style="display: none;">
-        <div class="position-absolute top-50 start-50 translate-middle">
-            <p class="h1 text-danger">Page not found</p>
+    <div id="backi" class="transi">
+
+    </div>
+    <div class="main">
+        <div class="msg">hello i'm Shayegan :)</div>
+
+    </div>
+    <div class="menu">
+        <div id="welcome">
+            <button id="close">
+                X
+            </button>
+            <div class="welcome-msg">
+                Welcome to the my website
+                <br>
+                <br>
+                I don't have any shit to write so<br> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius
+                deserunt quis dignissimos obcaecati, id nam enim vitae sequi, consequatur corrupti assumenda vero?
+                Possimus aliquam rem fugit necessitatibus quae explicabo quo.
+            </div>
         </div>
     </div>
-    <div class="container-md navbar navbar-dark bg-dark p-3">
-        <a class="navbar-brand" href="https://shayegan8.github.io">Shayegan8</a>
-        <ul class="navbar-nav navbar-nav-scroll">
-            <li class="nav-item">
-                <div class="shitass p-1">
-                    <a class="nav-link" href="https://github.com/Shayegan8" target="_blank">
 
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="#8b1818"
-                            class="bi bi-github" viewBox="0 0 70 70" width="100px" height="100px">
-                            <path
-                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
-                        </svg>
-
-                    </a>
-                </div>
+    <footer>
+        <ul class="foot">
+            <li class="toxt">
+                Copyright © 2024-2030
             </li>
         </ul>
-        <a style="text-decoration: none;" class="text-primary p-2" id="manage" onclick="showp()" role="button">
-            Pages
-        </a>
-        <a style="text-decoration: none; background-color: rgb(245, 167, 0); border: 1px solid rgb(245, 167, 0); border-radius: 10px; text-align: center; color: black; font-weight: bolder; font-size: x-small;"
-            class="p-1 m-1 navbar-item me-auto" href="https://shayegan8.github.io/apidocs">Javadoc</a>
-        <form class="text-black form-inline mt-2 mt-md-0" style="width: 20%;" onkeyup="">
-            <input class="bg-danger text-black form-control mr-sm-2 btn btn-outline-dark" id="searchi" type="text"
-                placeholder="Search" aria-label="search">
-        </form>
-    </div>
-    <div class="jumbotron vertical-center">
-        <div id="pages" class="container-sm" style="display: none;"></div>
-    </div>
-    <script type="text/javascript" src="script.js">
 
-    </script>
-
-    <div id="main">
-        <div class="container-md p-4 text-white">
-            <p class="h2">Information</p>
-            <p class="m-3">Average gnu/linux user, Interested in Rust</p>
-            <br>
-            <div class="position-absolute">
-                <a href="https://github.com/Shayegan8?tab=repositories" style="text-decoration: none;" target="_blank">
-                    <p class="h3" style="color: rgb(255, 255, 255);">
-                        Shayegan8 repositories
-                    </p>
-                    <p class="text-white">Click on me to see Shayegan8 repos</p>
-                </a>
-            </div>
-
-        </div>
-        <div class="container-md text-white">
-            <br>
-            <br>
-            <div class="position-absolute">
-                <a href="https://github.com/Over3dge/FBFEL" style="text-decoration: none;" target="_blank">
-                    <p class="text-danger m-3">CHECK OUT OUR LICENSE</p>
-                </a>
-            </div>
-        </div>
-        <div class="container-md pe-4 pt-5">
-            <br>
-            <br>
-            <div class="row ms-1">
-                <div class="col-12">
-                    <div class="row">
-                        <div class="col-sm-6 card card-body m-1 box-shadow overflow-auto"
-                            style="background-color: black; width: 20rem;">
-                            <p class="h1 card-title text-white">ArenaManager</p>
-                            <p class="h4 card-subtitle mb-1 ms-1">A library for minigames</p>
-                            <p class="card-text m-1" style="color: rgb(146, 146, 146);">I don't know what to write there
-                                so Lorem ipsum dolor sit amet
-                                consectetur adipisicing elit. Officia, inventore impedit. Totam, nisi odit. At aperiam,
-                                amet
-                                quaerat atque impedit laudantium natus obcaecati assumenda sequi pariatur, id totam
-                                vitae
-                                accusantium.</p>
-                            <a class="text-danger card-link ms-2"
-                                href="https://shayegan8.github.io/arenamanager.html">Click for more</a>
-                        </div>
-                        <div class="col-sm-6 card card-body m-1 box-shadow"
-                            style="background-color: black; width: 20rem;">
-                            <p class="h1 card-title text-white">Sexistanian Empire</p>
-                            <p class="h4 card-subtitle mb-1 ms-1">An ancient nation</p>
-                            <p class="card-text m-1" style="color: rgb(146, 146, 146);">I don't know what to write there
-                                again so Lorem ipsum dolor sit amet
-                                consectetur adipisicing elit. Officia, inventore impedit. Totam, nisi odit. At aperiam,
-                                amet
-                                quaerat atque impedit laudantium natus obcaecati assumenda sequi pariatur, id totam
-                                vitae
-                                accusantium.</p>
-                            <a class="text-danger card-link ms-2" href="https://shayegan8.github.io/sexistan.html">Click
-                                for more</a>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-0">
-
-                </div>
-            </div>
-
-        </div>
-    </div>
-    <footer class="mt-auto text-center text-white">
-        <div class="container mt-1 text-center">
-            <a href="https://www.aparat.com/Mrmelon" target="_blank" style="text-decoration: none;"
-                class="text-success">Aparat</a>
-            <p class="text-white">Copyright © 2024</p>
-        </div>
     </footer>
-    <div class="container-md row">
-        <div id="bar" class="container-md col-md-12" style="background-color: black;">
-            <div style="font-size: 30px;">
-                <a style="margin-top: auto;" href="https://shayegan8.github.io/arenamanager.html">ARENAMANAGER</a>
-                <br>
-                <a href="#">PAPIJOY</a>
-                <a href="https://shayegan8.github.io/sexistan.html">SEXISTAN</a>
-            </div>
-        </div>
-        <div class="col-0"></div>
-    </div>
-
+    <script src="script/script.js"></script>
 </body>
 
 </html>
