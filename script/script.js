@@ -58,26 +58,17 @@ function intervalparm() {
     backi.style.backgroundAttachment = "fixed"
 }
 
-function anima() {
-    var random = Math.floor(Math.random() * (pictures.length - 1))
-    var saved = pictures[random].url
-    backi.style.backgroundImage = "linear-gradient(to top, "
-    backi.style.backgroundRepeat = "no-repeat"
-    backi.style.backgroundSize = "cover"
-    backi.style.backgroundPosition = "center"
-    backi.style.backgroundAttachment = "fixed"
-
-}
-
 document.getElementById("close").addEventListener("click", () => {
     document.getElementById("welcome").style.opacity = "0"
     backi.style.backgroundBlendMode = "normal"
+    document.getElementById("main").style.userSelect = "text"
 })
 
 window.onload = () => {
     setTimeout(() => {
         document.getElementById("welcome").style.animation = "anisextion1 1s"
         document.getElementById("welcome").style.display = "flex"
+        document.getElementById("main").style.userSelect = "none"
         backi.style.backgroundBlendMode = "darken"
     }, 1000)
 
