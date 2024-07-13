@@ -96,8 +96,7 @@ document.getElementById("navi").addEventListener("click", () => {
 })
 
 document.addEventListener("keypress", (x) => {
-    if (x.key === 'Enter' && backi.style.backgroundBlendMode != "normal") {
-        alert("1")
+    if (x.key === "Enter" && backi.style.backgroundBlendMode != "normal" || x.code === "Space" && backi.style.backgroundBlendMode != "normal") {
         document.getElementById("welcome").style.opacity = "0"
         backi.style.backgroundBlendMode = "normal"
         document.getElementById("main").style.userSelect = "text"
