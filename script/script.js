@@ -77,6 +77,24 @@ document.getElementById("pixelshit").addEventListener("pointerover", () => {
 
 })
 
+document.getElementById("backi").addEventListener("click", () => {
+    document.getElementById("welcome").style.opacity = "0"
+    backi.style.backgroundBlendMode = "normal"
+    document.getElementById("main").style.userSelect = "text"
+})
+
+document.getElementById("main").addEventListener("click", () => {
+    document.getElementById("welcome").style.opacity = "0"
+    backi.style.backgroundBlendMode = "normal"
+    document.getElementById("main").style.userSelect = "text"
+})
+
+document.getElementById("navi").addEventListener("click", () => {
+    document.getElementById("welcome").style.opacity = "0"
+    backi.style.backgroundBlendMode = "normal"
+    document.getElementById("main").style.userSelect = "text"
+})
+
 window.onload = () => {
     setTimeout(() => {
         document.getElementById("welcome").style.animation = "anisextion1 1s"
