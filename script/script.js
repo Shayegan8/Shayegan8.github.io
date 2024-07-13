@@ -64,6 +64,20 @@ document.getElementById("close").addEventListener("click", () => {
     document.getElementById("main").style.userSelect = "text"
 })
 
+document.getElementById("pixelshit").addEventListener("click", () => {
+    if (document.getElementById("bar").style.opacity == "0") {
+        document.getElementById("bar").className = "anima-slide"
+        document.getElementById("bar").style.opacity = "1"
+    } else {
+        document.getElementById("bar").classList.toggle("anima-slide1")
+        document.getElementById("bar").style.opacity = "0"
+    }
+})
+
+document.getElementById("pixelshit").addEventListener("pointerover", () => {
+
+})
+
 window.onload = () => {
     setTimeout(() => {
         document.getElementById("welcome").style.animation = "anisextion1 1s"

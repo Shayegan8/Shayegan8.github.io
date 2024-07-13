@@ -13,7 +13,8 @@ body {
     margin: 0 auto;
     overflow: hidden;
     list-style: none;
-    position: fixed;
+    position: relative;
+    user-select: none;
 }
 
 .texts {
@@ -29,6 +30,9 @@ body {
 .navbar li:nth-child(1) {
     color: rgb(75, 75, 119);
     margin-left: 1.5%;
+
+    margin-top: 0%;
+    margin-bottom: 1%;
 }
 
 .navbar li:nth-child(2) {
@@ -38,6 +42,7 @@ body {
 .navbar li:nth-child(3) {
     margin-right: 1%;
     padding: 1.1%;
+    padding-bottom: 0;
     float: right;
 }
 
@@ -129,11 +134,9 @@ body {
 }
 
 .welcome-msg {
-    display: flex;
-    padding: 2%;
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-top: 5%;
+    padding: 3%;
+    margin-left: 7%;
+    margin-top: 6%;
     color: white;
     font-size: 20px;
 }
@@ -143,7 +146,8 @@ body {
     display: flex;
     background: none;
     border: none;
-    padding: 1%;
+    margin-top: 0.3%;
+    margin-left: 0.3%;
     font-size: 20px;
     color: rgb(83, 0, 0);
 }
@@ -158,8 +162,47 @@ body {
     z-index: 1;
 }
 
-.bar ul li {
-    display: inline-block;
+.anima1 {
+    animation: anisextion1 1s;
+}
+
+.anima2 {
+    animation: anisextion2 1s;
+}
+
+.anima-slide {
+    animation: slide-anisextion 0.2s ease-in;
+}
+
+.anima-slide1 {
+    animation: slide-anisextion1 1s ease-in-out;
+}
+
+#bar {
+    position: fixed;
+    opacity: 0;
+    right: 0;
+    margin-top: 3%;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    background-color: black;
+    width: 13%;
+}
+
+#bar ul {
+    list-style: none;
+}
+
+#bar li:nth-child(1) {
+    padding: 1%;
+    margin: 1%;
+}
+
+#bar li:nth-child(2) {
+    color: rgb(141, 0, 0);
+    margin-bottom: 1%;
+    margin-left: 4%;
 }
 
 .shittext {
@@ -193,13 +236,23 @@ body {
     }
 }
 
-@keyframes anisextion2 {
+@keyframes slide-anisextion {
     0% {
-        opacity: 1;
+        transform: skewX(-1deg) translateX(100px);
     }
 
     100% {
-        opacity: 2;
+        transform: skewX(0deg);
+    }
+}
+
+@keyframes slide-anisextion1 {
+    0% {
+        transform: skewX(0deg);
+    }
+
+    100% {
+        transform: skewX(-1deg) translateX(100px);
     }
 }
 
@@ -233,6 +286,18 @@ body {
 
     .toxt {
         font-size: 11px;
+    }
+
+    #bar {
+        width: 30%;
+    }
+
+    #bar li:nth-child(2) {
+        color: rgb(141, 0, 0);
+        font-size: 8px;
+        font-weight: 500;
+        margin-bottom: 1%;
+        margin-left: 4%;
     }
 }
 
