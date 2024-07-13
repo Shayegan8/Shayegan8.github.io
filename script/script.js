@@ -66,7 +66,7 @@ document.getElementById("pixelshit").addEventListener("click", () => {
         document.getElementById("bar").style.animation = "slide-anisextion1 0.5s"
         setTimeout(() => {
             document.getElementById("bar").style.opacity = "0"
-        }, 500)
+        }, 400)
     }
 })
 
