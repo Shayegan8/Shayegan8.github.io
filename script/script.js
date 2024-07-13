@@ -48,16 +48,6 @@ let pictures = [
 
 let backi = document.getElementById("backi")
 
-function intervalparm() {
-    var random = Math.floor(Math.random() * (pictures.length - 1))
-    var saved = pictures[random].url
-    backi.style.backgroundImage = "url('" + saved + "')"
-    backi.style.backgroundRepeat = "no-repeat"
-    backi.style.backgroundSize = "cover"
-    backi.style.backgroundPosition = "center"
-    backi.style.backgroundAttachment = "fixed"
-}
-
 document.getElementById("close").addEventListener("click", () => {
     document.getElementById("welcome").style.opacity = "0"
     backi.style.backgroundBlendMode = "normal"
