@@ -95,6 +95,15 @@ document.getElementById("navi").addEventListener("click", () => {
     document.getElementById("main").style.userSelect = "text"
 })
 
+document.addEventListener("keypress", (x) => {
+    if (x.key === 'Enter' && backi.style.backgroundBlendMode != "normal") {
+        alert("1")
+        document.getElementById("welcome").style.opacity = "0"
+        backi.style.backgroundBlendMode = "normal"
+        document.getElementById("main").style.userSelect = "text"
+    }
+})
+
 window.onload = () => {
     setTimeout(() => {
         document.getElementById("welcome").style.animation = "anisextion1 1s"
