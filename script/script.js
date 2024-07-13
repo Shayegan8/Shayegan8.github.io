@@ -55,11 +55,18 @@ document.getElementById("close").addEventListener("click", () => {
 })
 
 document.getElementById("pixelshit").addEventListener("click", () => {
-    if (document.getElementById("bar").style.opacity == "0") {
-        document.getElementById("bar").className = "anima-slide"
-        document.getElementById("bar").style.opacity = "1"
+    if (document.getElementById("bar").style.opacity == 0) {
+        document.getElementById("bar").style.opacity = 1
+        document.getElementById("bar").style.animation = "none"
+        document.getElementById("bar").offsetWidth
+        document.getElementById("bar").style.animation = "slide-anisextion 0.5s"
     } else {
-        document.getElementById("bar").style.opacity = "0"
+        document.getElementById("bar").style.animation = "none"
+        document.getElementById("bar").offsetWidth
+        document.getElementById("bar").style.animation = "slide-anisextion1 0.5s"
+        setTimeout(() => {
+            document.getElementById("bar").style.opacity = "0"
+        }, 500)
     }
 })
 

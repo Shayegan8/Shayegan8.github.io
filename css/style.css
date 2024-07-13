@@ -166,22 +166,6 @@ body {
     z-index: 1;
 }
 
-.anima1 {
-    animation: anisextion1 1s;
-}
-
-.anima2 {
-    animation: anisextion2 1s;
-}
-
-.anima-slide {
-    animation: slide-anisextion 0.2s ease-in;
-}
-
-.anima-slide1 {
-    animation: slide-anisextion1 1s ease-in-out;
-}
-
 #bar {
     position: fixed;
     opacity: 0;
@@ -256,7 +240,7 @@ body {
     }
 
     100% {
-        transform: skewX(-1deg) translateX(100px);
+        transform: skewX(-1deg) translateX(100%);
     }
 }
 
@@ -284,7 +268,6 @@ body {
     }
 
     .foot li:nth-child(3) a {
-        color: rgb(66, 22, 22);
         font-size: 11px;
     }
 
