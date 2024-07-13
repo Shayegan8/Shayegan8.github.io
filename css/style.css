@@ -297,7 +297,6 @@ body {
     }
 
     #bar li:nth-child(2) {
-        color: rgb(141, 0, 0);
         font-size: 8px;
         font-weight: 500;
         margin-bottom: 1%;
