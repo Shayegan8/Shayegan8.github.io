@@ -110,7 +110,8 @@ body {
 }
 
 .foot li:nth-child(3) a {
-    color: rgb(66, 22, 22);
+    color: rgb(255, 65, 65);
+    text-decoration: none;
     font-size: 14px;
 }
 

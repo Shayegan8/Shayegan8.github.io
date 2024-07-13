@@ -69,7 +69,6 @@ document.getElementById("pixelshit").addEventListener("click", () => {
         document.getElementById("bar").className = "anima-slide"
         document.getElementById("bar").style.opacity = "1"
     } else {
-        document.getElementById("bar").classList.toggle("anima-slide1")
         document.getElementById("bar").style.opacity = "0"
     }
 })
