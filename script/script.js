@@ -40,7 +40,16 @@ let pictures = [
 let pages = [
     {
         id: 0,
-        name: "No pages yet"
+        name: "no pages yet"
+    }, {
+        id: 1,
+        name: "dwoadalx"
+    }, {
+        id: 2,
+        name: "no zap"
+    }, {
+        id: 3,
+        name: "no pages"
     },
 ]
 
@@ -122,10 +131,10 @@ document.getElementById("dirtinput").addEventListener("input", (x) => {
     if (resultList.getElementsByTagName("li") != 0) {
         removeAll(resultList)
     }
-    var value = document.getElementById("dirtinput").value
+    var value = x.target.value
     for (var i = 0; i < pages.length; i++) {
 
-        if (pages[i].name.includes(value) || value.search(x.target.value)) {
+        if (pages[i].name.includes(value) && pages[i].name.search(value)) {
             if (value != "") {
                 const elm = document.createElement("li")
                 elm.innerHTML = `
@@ -135,7 +144,7 @@ document.getElementById("dirtinput").addEventListener("input", (x) => {
             <div>
                 About:
             </div>`
-                var random = Math.floor(Math.random() * 1)
+                var random = Math.floor(Math.random() * pages_pictures.length)
                 if (pages_pictures[0].url == "pictures/5129130.jpg") {
                 }
                 elm.style.backgroundImage = "url('" + pages_pictures[random].url + "')"
@@ -147,10 +156,11 @@ document.getElementById("dirtinput").addEventListener("input", (x) => {
             }
         } else if (value == "") {
             removeAll(resultList)
-        } else if (!value.search(x.target.value) && value != "") {
+        } else if (!value.toLowerCase().search(x.target.value) && value != "") {
             const elm = document.createElement("p")
             elm.innerHTML = `<p id="fuckduck">No pages found :(</p>`
             resultList.appendChild(elm)
+            break
         }
     }
 })
