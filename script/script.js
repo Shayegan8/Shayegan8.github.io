@@ -148,7 +148,6 @@ document.getElementById("dirtinput").addEventListener("input", (x) => {
         } else if (value == "") {
             removeAll(resultList)
         } else if (!value.search(x.target.value) && value != "") {
-            alert("a")
             const elm = document.createElement("p")
             elm.innerHTML = `<p id="fuckduck">No pages found :(</p>`
             resultList.appendChild(elm)
