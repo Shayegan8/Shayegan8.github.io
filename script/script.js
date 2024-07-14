@@ -42,10 +42,6 @@ let pages = [
         id: 0,
         name: "No pages yet"
     },
-    {
-        id: 1,
-        name: "Ages"
-    }
 ]
 
 let pages_pictures = [
@@ -123,8 +119,9 @@ const removeAll = (element) => { // i want anonymous be const :)
 }
 
 document.getElementById("dirtinput").addEventListener("input", (x) => {
-    if (resultList.getElementsByTagName("li") != 0)
+    if (resultList.getElementsByTagName("li") != 0) {
         removeAll(resultList)
+    }
     var value = document.getElementById("dirtinput").value
     for (var i = 0; i < pages.length; i++) {
 
@@ -139,7 +136,7 @@ document.getElementById("dirtinput").addEventListener("input", (x) => {
                 About:
             </div>`
                 var random = Math.floor(Math.random() * 1)
-                if(pages_pictures[0].url == "pictures/5129130.jpg") {
+                if (pages_pictures[0].url == "pictures/5129130.jpg") {
                 }
                 elm.style.backgroundImage = "url('" + pages_pictures[random].url + "')"
                 elm.style.backgroundRepeat = "no-repeat"
@@ -147,10 +144,14 @@ document.getElementById("dirtinput").addEventListener("input", (x) => {
                 elm.style.backgroundPosition = "center"
                 elm.style.backgroundAttachment = "fixed"
                 resultList.appendChild(elm != null ? elm : null)
-                set.add(elm)
             }
         } else if (value == "") {
             removeAll(resultList)
+        } else if (!value.search(x.target.value) && value != "") {
+            alert("a")
+            const elm = document.createElement("p")
+            elm.innerHTML = `<p id="fuckduck">No pages found :(</p>`
+            resultList.appendChild(elm)
         }
     }
 })

@@ -253,6 +253,11 @@ body {
     color: rgb(34, 121, 148);
 }
 
+#fuckduck {
+    margin: 0;
+    color: rgb(168, 31, 31);
+}
+
 @font-face {
     font-family: kirpixel;
     src: url(../fonts/PixeloidSans-mLxMm.ttf);
