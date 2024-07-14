@@ -51,6 +51,9 @@ let pages = [
 let pages_pictures = [
     {
         url: "pictures/5129130.jpg"
+    },
+    {
+        url: "pictures/1347872.jpg"
     }
 ]
 
