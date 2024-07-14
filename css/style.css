@@ -203,10 +203,11 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    border: 20px black solid;
+    border: 5px black solid;
     border-radius: 4px;
     color: white;
     outline: none;
+    font-size: 20px;
 }
 
 #result {
@@ -337,6 +338,10 @@ body {
         font-weight: 500;
         margin-bottom: 1%;
         margin-left: 4%;
+    }
+
+    #dirtinput {
+        width: 60%;
     }
 
 }

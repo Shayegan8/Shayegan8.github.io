@@ -41,6 +41,10 @@ let pages = [
     {
         id: 0,
         name: "No pages yet"
+    },
+    {
+        id: 1,
+        name: "Ages"
     }
 ]
 
@@ -107,7 +111,7 @@ document.addEventListener("keypress", (x) => {
 
 let set = new Set()
 
-const removeAll = (element) => {
+let removeAll = (element) => {
     while (element.lastChild) {
         element.removeChild(element.lastChild)
     }
@@ -115,27 +119,32 @@ const removeAll = (element) => {
 
 let resultList = document.getElementById("result-list")
 
-document.getElementById("dirtinput").addEventListener("input", () => {
+document.getElementById("dirtinput").addEventListener("input", (x) => {
+    if (resultList.getElementsByTagName("li") != 0)
+        removeAll(resultList)
     var value = document.getElementById("dirtinput").value
     for (var i = 0; i < pages.length; i++) {
-        if (pages[i].name.includes(value) && value != "") {
-            const elm = document.createElement("li")
-            elm.innerHTML = `
+
+        if (pages[i].name.includes(value) || value.search(x.target.value)) {
+            if (value != "") {
+                const elm = document.createElement("li")
+                elm.innerHTML = `
             <p>
                 ${pages[i].name} 
             </p>
             <div>
                 About:
             </div>`
-            var random = Math.floor(Math.random * pages_pictures.length)
-            elm.style.backgroundImage = "url('" + pages_pictures[random] + "')"
-            elm.style.backgroundRepeat = "no-repeat"
-            elm.style.backgroundClip = "cover"
-            elm.style.backgroundPosition = "center"
-            elm.style.backgroundAttachment = "fixed"
-            resultList.appendChild(elm != null ? elm : null)
-            set.add(elm)
-        } else if (!value.includes(pages[i].name)) {
+                var random = Math.floor(Math.random * pages_pictures.length)
+                elm.style.backgroundImage = "url('" + pages_pictures[random] + "')"
+                elm.style.backgroundRepeat = "no-repeat"
+                elm.style.backgroundClip = "cover"
+                elm.style.backgroundPosition = "center"
+                elm.style.backgroundAttachment = "fixed"
+                resultList.appendChild(elm != null ? elm : null)
+                set.add(elm)
+            }
+        } else if (value == "") {
             removeAll(resultList)
         }
     }
