@@ -157,10 +157,12 @@ document.getElementById("dirtinput").addEventListener("input", (x) => {
         } else if (value == "") {
             removeAll(resultList)
         } else if (!value.toLowerCase().search(x.target.value) && value != "") {
-            const elm = document.createElement("p")
-            elm.innerHTML = `<p id="fuckduck">No pages found :(</p>`
-            resultList.appendChild(elm)
-            break
+            if (resultList.querySelectorAll("li").length == 0) {
+                const elm = document.createElement("p")
+                elm.innerHTML = `<p id="fuckduck">No pages found :(</p>`
+                resultList.appendChild(elm)
+                break
+            }
         }
     }
 })
