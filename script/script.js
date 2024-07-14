@@ -111,13 +111,13 @@ document.addEventListener("keypress", (x) => {
 
 let set = new Set()
 
-let removeAll = (element) => {
+let resultList = document.getElementById("result-list")
+
+const removeAll = (element) => { // i want anonymous be const :)
     while (element.lastChild) {
         element.removeChild(element.lastChild)
     }
 }
-
-let resultList = document.getElementById("result-list")
 
 document.getElementById("dirtinput").addEventListener("input", (x) => {
     if (resultList.getElementsByTagName("li") != 0)
@@ -135,8 +135,10 @@ document.getElementById("dirtinput").addEventListener("input", (x) => {
             <div>
                 About:
             </div>`
-                var random = Math.floor(Math.random * pages_pictures.length)
-                elm.style.backgroundImage = "url('" + pages_pictures[random] + "')"
+                var random = Math.floor(Math.random() * 1)
+                if(pages_pictures[0].url == "pictures/5129130.jpg") {
+                }
+                elm.style.backgroundImage = "url('" + pages_pictures[random].url + "')"
                 elm.style.backgroundRepeat = "no-repeat"
                 elm.style.backgroundClip = "cover"
                 elm.style.backgroundPosition = "center"
@@ -148,7 +150,6 @@ document.getElementById("dirtinput").addEventListener("input", (x) => {
             removeAll(resultList)
         }
     }
-
 })
 
 window.onload = () => {
