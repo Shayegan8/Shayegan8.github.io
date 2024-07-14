@@ -1,49 +1,53 @@
 let pictures = [
     {
-        id: 0,
         url: "pictures/590cdbc4efd19b9.png"
     },
     {
 
-        id: 1,
         url: "pictures/a9b7de6cf1eb0ba.png"
     },
     ,
     {
 
-        id: 2,
         url: "pictures/ce3d8296f78ea76.png"
     },
     {
 
-        id: 3,
         url: "pictures/de9dfd288762147.png"
     },
     {
 
-        id: 4,
         url: "pictures/eaa93d44df76eb3.png"
     },
     {
 
-        id: 5,
         url: "pictures/sr2b683934a5e31.png"
     },
     {
 
-        id: 6,
         url: "pictures/sr2bddd005c62aws3.png"
     },
     {
 
-        id: 7,
         url: "pictures/sr20cfed9993daws3.png"
     },
     {
 
-        id: 8,
         url: "pictures/sr28991f9e3a2aws3.png"
     },
+]
+
+let pages = [
+    {
+        id: 0,
+        name: "No pages yet"
+    }
+]
+
+let pages_pictures = [
+    {
+        url: "pictures/5129130.jpg"
+    }
 ]
 
 let backi = document.getElementById("backi")
@@ -70,6 +74,7 @@ document.getElementById("pixelshit").addEventListener("click", () => {
     }
 })
 
+//unused
 document.getElementById("pixelshit").addEventListener("pointerover", () => {
 
 })
@@ -100,6 +105,43 @@ document.addEventListener("keypress", (x) => {
     }
 })
 
+let set = new Set()
+
+const removeAll = (element) => {
+    while (element.lastChild) {
+        element.removeChild(element.lastChild)
+    }
+}
+
+let resultList = document.getElementById("result-list")
+
+document.getElementById("dirtinput").addEventListener("input", () => {
+    var value = document.getElementById("dirtinput").value
+    for (var i = 0; i < pages.length; i++) {
+        if (pages[i].name.includes(value) && value != "") {
+            const elm = document.createElement("li")
+            elm.innerHTML = `
+            <p>
+                ${pages[i].name} 
+            </p>
+            <div>
+                About:
+            </div>`
+            var random = Math.floor(Math.random * pages_pictures.length)
+            elm.style.backgroundImage = "url('" + pages_pictures[random] + "')"
+            elm.style.backgroundRepeat = "no-repeat"
+            elm.style.backgroundClip = "cover"
+            elm.style.backgroundPosition = "center"
+            elm.style.backgroundAttachment = "fixed"
+            resultList.appendChild(elm != null ? elm : null)
+            set.add(elm)
+        } else if (!value.includes(pages[i].name)) {
+            removeAll(resultList)
+        }
+    }
+
+})
+
 window.onload = () => {
     setTimeout(() => {
         document.getElementById("welcome").style.animation = "anisextion1 1s"
@@ -108,10 +150,10 @@ window.onload = () => {
         backi.style.backgroundBlendMode = "darken"
     }, 1000)
 
-    var random = Math.floor(Math.random() * (pictures.length - 1))
+    var random = Math.floor(Math.random() * (pictures.length))
     if (random == 2)
         while (random == 2)
-            random = Math.floor(Math.random() * (pictures.length - 1))
+            random = Math.floor(Math.random() * (pictures.length))
     var saved_s = pictures[random].url
     backi.style.backgroundImage = "url('" + saved_s + "')";
     backi.style.backgroundRepeat = "no-repeat"
@@ -120,7 +162,7 @@ window.onload = () => {
     backi.style.backgroundAttachment = "fixed"
     setInterval(function () {
         backi.classList.toggle("transi")
-        random = Math.floor(Math.random() * (pictures.length - 1))
+        random = Math.floor(Math.random() * (pictures.length))
         saved_s = pictures[random].url
         backi.style.backgroundImage = "url('" + saved_s + "')"
         backi.style.backgroundRepeat = "no-repeat"
