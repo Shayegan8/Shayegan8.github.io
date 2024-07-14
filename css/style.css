@@ -341,7 +341,11 @@ body {
     }
 
     #dirtinput {
-        width: 60%;
+        width: 100%;
+    }
+
+    #result {
+        width: 100%;
     }
 
 }
