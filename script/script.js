@@ -35,6 +35,9 @@ let pictures = [
 
         url: "pictures/sr28991f9e3a2aws3.png"
     },
+    {
+        url: "pictures/sr243b0131f1faws3.png"
+    }
 ]
 
 let pages = [
@@ -83,8 +86,9 @@ document.getElementById("pixelshit").addEventListener("click", () => {
         document.getElementById("bar").style.animation = "none"
         document.getElementById("bar").offsetWidth
         document.getElementById("bar").style.animation = "slide-anisextion1 0.5s"
-        welcome_fucker()
-
+        setTimeout(() => {
+            document.getElementById("bar").style.opacity = 0
+        }, 400)
     }
 })
 
@@ -185,7 +189,7 @@ document.getElementById("dirtinput").addEventListener("input", (x) => {
                     ${name.name} 
                 </p>
                 <div>
-                    About:
+                    ID: ${name.id}
                 </div>`
             var random = Math.floor(Math.random() * pages_pictures.length)
             elm.style.backgroundImage = "url('" + pages_pictures[random].url + "')"
