@@ -193,6 +193,9 @@ document.getElementById("dirtinput").addEventListener("input", (x) => {
                     ID: ${name.id}
                 </div>`
             var random = Math.floor(Math.random() * pages_pictures.length)
+            if (random == 9) {
+                document.getElementById("msg").style.color = "white"
+            }
             elm.style.backgroundImage = "url('" + pages_pictures[random].url + "')"
             elm.style.backgroundRepeat = "no-repeat"
             elm.style.backgroundClip = "cover"
