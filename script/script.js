@@ -155,7 +155,7 @@ document.getElementById("dirtinput").addEventListener("input", (x) => {
         var bool = false
         for (var i = 0; i < pages.length; i++) {
             for (var j = 0; j < value.length; j++) {
-                if (pages[i].name.includes(value.charAt(j))) {
+                if (pages[i].name.includes(value.toLowerCase().charAt(j))) {
                     bool = true
                 }
             }
@@ -166,7 +166,7 @@ document.getElementById("dirtinput").addEventListener("input", (x) => {
         }
         return true
     }).filter((x) => {
-        if (x.name.includes(value)) {
+        if (x.name.includes(value.toLowerCase())) {
             return x.name
         }
     })
@@ -176,6 +176,7 @@ document.getElementById("dirtinput").addEventListener("input", (x) => {
             const elm = document.createElement("p")
             elm.innerHTML = `<p id="fuckduck">No pages found :(</p>`
             resultList.appendChild(elm)
+            document.getElementById("news").style.display = "none"
             doloop = false
         }
     }
@@ -196,8 +197,11 @@ document.getElementById("dirtinput").addEventListener("input", (x) => {
             elm.style.backgroundRepeat = "no-repeat"
             elm.style.backgroundClip = "cover"
             elm.style.backgroundPosition = "center"
-            elm.style.backgroundAttachment = "fixed"
-            resultList.appendChild(elm != null ? elm : null)
+            if (resultList.querySelectorAll("li").length <= 0) {
+                resultList.appendChild(elm != null ? elm : null)
+            } else if (resultList.querySelectorAll("li").length > 0) {
+                resultList.insertBefore(elm, elm.previousSibling)
+            }
         }
     } else if (value == "") {
         document.getElementById("news").style.display = "flex"
