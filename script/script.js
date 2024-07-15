@@ -220,6 +220,8 @@ window.onload = () => {
     var random = Math.floor(Math.random() * (pictures.length))
     if (random == 10) {
         document.getElementById("msg").style.color = "white"
+    } else {
+        document.getElementById("msg").style.color = "black"
     }
     if (random == 2)
         while (random == 2)
@@ -235,6 +237,8 @@ window.onload = () => {
         backi.classList.toggle("transi")
         if (random == 10) {
             document.getElementById("msg").style.color = "white"
+        } else {
+            document.getElementById("msg").style.color = "black"
         }
         random = Math.floor(Math.random() * (pictures.length))
         saved_s = pictures[random].url
