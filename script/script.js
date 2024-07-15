@@ -193,9 +193,7 @@ document.getElementById("dirtinput").addEventListener("input", (x) => {
                     ID: ${name.id}
                 </div>`
             var random = Math.floor(Math.random() * pages_pictures.length)
-            if (random == 9) {
-                document.getElementById("msg").style.color = "white"
-            }
+
             elm.style.backgroundImage = "url('" + pages_pictures[random].url + "')"
             elm.style.backgroundRepeat = "no-repeat"
             elm.style.backgroundClip = "cover"
@@ -220,6 +218,9 @@ window.onload = () => {
     }, 1000)
 
     var random = Math.floor(Math.random() * (pictures.length))
+    if (random == 9) {
+        document.getElementById("msg").style.color = "white"
+    }
     if (random == 2)
         while (random == 2)
             random = Math.floor(Math.random() * (pictures.length))
@@ -229,6 +230,7 @@ window.onload = () => {
     backi.style.backgroundSize = "cover"
     backi.style.backgroundPosition = "center"
     backi.style.backgroundAttachment = "fixed"
+
     setInterval(function () {
         backi.classList.toggle("transi")
         random = Math.floor(Math.random() * (pictures.length))
