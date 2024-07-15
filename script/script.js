@@ -127,14 +127,14 @@ const removeAll = (element) => { // i want anonymous be const :)
     }
 }
 
-document.getElementById("dirtinput").addEventListener("input", (x) => {
+document.getElementById("dirtinput").addEventListener("keyup", (x) => {
     if (resultList.getElementsByTagName("li") != 0) {
         removeAll(resultList)
     }
-    var value = x.target.value
+    var value = document.getElementById("dirtinput").value
     for (var i = 0; i < pages.length; i++) {
 
-        if (pages[i].name.includes(value) && pages[i].name.search(value)) {
+        if (pages[i].name.includes(value.toLowerCase())) {
             if (value != "") {
                 const elm = document.createElement("li")
                 elm.innerHTML = `
