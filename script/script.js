@@ -134,7 +134,7 @@ document.getElementById("dirtinput").addEventListener("input", (x) => {
     var value = document.getElementById("dirtinput").value
     for (var i = 0; i < pages.length; i++) {
 
-        if (pages[i].name.includes(value.toLowerCase())) {
+        if (pages[i].name.includes(value) && value.toLowerCase().indexOf(value, 1)) {
             if (value != "") {
                 const elm = document.createElement("li")
                 elm.innerHTML = `
@@ -145,8 +145,7 @@ document.getElementById("dirtinput").addEventListener("input", (x) => {
                 About:
             </div>`
                 var random = Math.floor(Math.random() * pages_pictures.length)
-                if (pages_pictures[0].url == "pictures/5129130.jpg") {
-                }
+                
                 elm.style.backgroundImage = "url('" + pages_pictures[random].url + "')"
                 elm.style.backgroundRepeat = "no-repeat"
                 elm.style.backgroundClip = "cover"
@@ -156,7 +155,7 @@ document.getElementById("dirtinput").addEventListener("input", (x) => {
             }
         } else if (value == "") {
             removeAll(resultList)
-        } else if (!value.toLowerCase().search(x.target.value) && value != "") {
+        } else if (!pages[i].name.includes(value) && value != "") {
             if (resultList.querySelectorAll("li").length == 0) {
                 const elm = document.createElement("p")
                 elm.innerHTML = `<p id="fuckduck">No pages found :(</p>`
