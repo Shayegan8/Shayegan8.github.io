@@ -127,7 +127,7 @@ const removeAll = (element) => { // i want anonymous be const :)
     }
 }
 
-document.getElementById("dirtinput").addEventListener("keyup", (x) => {
+document.getElementById("dirtinput").addEventListener("input", (x) => {
     if (resultList.getElementsByTagName("li") != 0) {
         removeAll(resultList)
     }
@@ -156,7 +156,7 @@ document.getElementById("dirtinput").addEventListener("keyup", (x) => {
             }
         } else if (value == "") {
             removeAll(resultList)
-        } else if (!value.toLowerCase().search(value) && value != "") {
+        } else if (!value.toLowerCase().search(x.target.value) && value != "") {
             if (resultList.querySelectorAll("li").length == 0) {
                 const elm = document.createElement("p")
                 elm.innerHTML = `<p id="fuckduck">No pages found :(</p>`
