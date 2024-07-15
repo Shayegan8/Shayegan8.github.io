@@ -63,11 +63,14 @@ let pages_pictures = [
 ]
 
 let backi = document.getElementById("backi")
+const welcomi = document.getElementById("welcome")
 
 document.getElementById("close").addEventListener("click", () => {
     document.getElementById("welcome").style.opacity = "0"
     backi.style.backgroundBlendMode = "normal"
     document.getElementById("main").style.userSelect = "text"
+    welcome_fucker()
+
 })
 
 document.getElementById("pixelshit").addEventListener("click", () => {
@@ -80,9 +83,8 @@ document.getElementById("pixelshit").addEventListener("click", () => {
         document.getElementById("bar").style.animation = "none"
         document.getElementById("bar").offsetWidth
         document.getElementById("bar").style.animation = "slide-anisextion1 0.5s"
-        setTimeout(() => {
-            document.getElementById("bar").style.opacity = "0"
-        }, 400)
+        welcome_fucker()
+
     }
 })
 
@@ -95,12 +97,16 @@ document.getElementById("backi").addEventListener("click", () => {
     document.getElementById("welcome").style.opacity = "0"
     backi.style.backgroundBlendMode = "normal"
     document.getElementById("main").style.userSelect = "text"
+    welcome_fucker()
+
 })
 
 document.getElementById("main").addEventListener("click", () => {
     document.getElementById("welcome").style.opacity = "0"
     backi.style.backgroundBlendMode = "normal"
     document.getElementById("main").style.userSelect = "text"
+    welcome_fucker()
+
 })
 
 document.getElementById("navi").addEventListener("click", () => {
@@ -114,8 +120,16 @@ document.addEventListener("keypress", (x) => {
         document.getElementById("welcome").style.opacity = "0"
         backi.style.backgroundBlendMode = "normal"
         document.getElementById("main").style.userSelect = "text"
+        welcome_fucker()
     }
 })
+
+function welcome_fucker() {
+    setTimeout(() => {
+        document.getElementById("welcome").remove()
+        document.getElementById("welcome-msg").remove()
+    }, 1000)
+}
 
 let set = new Set()
 
@@ -153,10 +167,7 @@ document.getElementById("dirtinput").addEventListener("input", (x) => {
         }
     })
 
-
-    if (value == "") {
-        removeAll(resultList)
-    } else if (checker.length == 0 && value != "") {
+    if (checker.length == 0 && value != "") {
         if (resultList.querySelectorAll("li").length == 0) {
             const elm = document.createElement("p")
             elm.innerHTML = `<p id="fuckduck">No pages found :(</p>`
@@ -164,7 +175,8 @@ document.getElementById("dirtinput").addEventListener("input", (x) => {
             doloop = false
         }
     }
-    if (doloop) {
+    if (doloop && value != "") {
+        document.getElementById("news").style.display = "none"
         for (let name of checker.values()) {
 
             const elm = document.createElement("li")
@@ -183,6 +195,8 @@ document.getElementById("dirtinput").addEventListener("input", (x) => {
             elm.style.backgroundAttachment = "fixed"
             resultList.appendChild(elm != null ? elm : null)
         }
+    } else if (value == "") {
+        document.getElementById("news").style.display = "flex"
     }
 })
 
