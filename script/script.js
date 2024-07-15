@@ -132,36 +132,56 @@ document.getElementById("dirtinput").addEventListener("input", (x) => {
         removeAll(resultList)
     }
     var value = document.getElementById("dirtinput").value
-    for (var i = 0; i < pages.length; i++) {
-
-        if (pages[i].name.includes(value) && value.toLowerCase().indexOf(value, 1)) {
-            if (value != "") {
-                const elm = document.createElement("li")
-                elm.innerHTML = `
-            <p>
-                ${pages[i].name} 
-            </p>
-            <div>
-                About:
-            </div>`
-                var random = Math.floor(Math.random() * pages_pictures.length)
-                
-                elm.style.backgroundImage = "url('" + pages_pictures[random].url + "')"
-                elm.style.backgroundRepeat = "no-repeat"
-                elm.style.backgroundClip = "cover"
-                elm.style.backgroundPosition = "center"
-                elm.style.backgroundAttachment = "fixed"
-                resultList.appendChild(elm != null ? elm : null)
+    var doloop = true
+    var checker = pages.filter((y) => {
+        var bool = false
+        for (var i = 0; i < pages.length; i++) {
+            for (var j = 0; j < value.length; j++) {
+                if (pages[i].name.includes(value.charAt(j))) {
+                    bool = true
+                }
             }
-        } else if (value == "") {
-            removeAll(resultList)
-        } else if (!pages[i].name.includes(value) && value != "") {
-            if (resultList.querySelectorAll("li").length == 0) {
-                const elm = document.createElement("p")
-                elm.innerHTML = `<p id="fuckduck">No pages found :(</p>`
-                resultList.appendChild(elm)
+            if (bool)
+                return pages[i].name
+            else
                 break
-            }
+        }
+        return true
+    }).filter((x) => {
+        if (x.name.includes(value)) {
+            return x.name
+        }
+    })
+
+
+    if (value == "") {
+        removeAll(resultList)
+    } else if (checker.length == 0 && value != "") {
+        if (resultList.querySelectorAll("li").length == 0) {
+            const elm = document.createElement("p")
+            elm.innerHTML = `<p id="fuckduck">No pages found :(</p>`
+            resultList.appendChild(elm)
+            doloop = false
+        }
+    }
+    if (doloop) {
+        for (let name of checker.values()) {
+
+            const elm = document.createElement("li")
+            elm.innerHTML = `
+                <p>
+                    ${name.name} 
+                </p>
+                <div>
+                    About:
+                </div>`
+            var random = Math.floor(Math.random() * pages_pictures.length)
+            elm.style.backgroundImage = "url('" + pages_pictures[random].url + "')"
+            elm.style.backgroundRepeat = "no-repeat"
+            elm.style.backgroundClip = "cover"
+            elm.style.backgroundPosition = "center"
+            elm.style.backgroundAttachment = "fixed"
+            resultList.appendChild(elm != null ? elm : null)
         }
     }
 })
