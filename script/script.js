@@ -218,7 +218,7 @@ window.onload = () => {
     }, 1000)
 
     var random = Math.floor(Math.random() * (pictures.length))
-    if (random == 9) {
+    if (random == 10) {
         document.getElementById("msg").style.color = "white"
     }
     if (random == 2)
@@ -233,6 +233,9 @@ window.onload = () => {
 
     setInterval(function () {
         backi.classList.toggle("transi")
+        if (random == 10) {
+            document.getElementById("msg").style.color = "white"
+        }
         random = Math.floor(Math.random() * (pictures.length))
         saved_s = pictures[random].url
         backi.style.backgroundImage = "url('" + saved_s + "')"
