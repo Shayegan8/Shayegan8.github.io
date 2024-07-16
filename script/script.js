@@ -229,5 +229,23 @@ window.onload = () => {
         document.getElementById("welcome").style.display = "flex"
         document.getElementById("result").style.userSelect = "none"
     }, 1000)
+
+    if (window.matchMedia) {
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            backi.style.backgroundColor = "black"
+            document.getElementById("result").style.backgroundColor = "black"
+            document.getElementById("navi").style.backgroundColor = "rgb(10, 10, 10)"
+            document.getElementById("navi").style.boxShadow = "none"
+            document.getElementById("dirtinput").style.color = "white"
+            document.getElementById("news").style.backgroundImage = "linear-gradient(to left, rgb(30, 14, 73), rgb(21, 0, 78), rgb(14, 0, 54))"
+        } else {
+            backi.style.backgroundColor = "rgb(185, 178, 206)"
+            document.getElementById("result").style.backgroundColor = "rgb(185, 178, 206)"
+            document.getElementById("navi").style.backgroundColor = "rgb(185, 245, 255)"
+            document.getElementById("navi").style.boxShadow = "0 4px 2px -2px gray"
+            document.getElementById("dirtinput").style.color = "black"
+            document.getElementById("news").style.backgroundImage = "linear-gradient(to left, rgb(21, 83, 177), rgb(13, 76, 134), rgb(0, 47, 117))"
+        }
+    }
 }
 
