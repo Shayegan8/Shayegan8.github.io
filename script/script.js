@@ -1,4 +1,26 @@
-let pictures = [
+let pages = [
+    {
+        id: 0,
+        name: "no pages yet"
+    }, {
+        id: 1,
+        name: "dwoadalx"
+    }, {
+        id: 2,
+        name: "no zap"
+    }, {
+        id: 3,
+        name: "no pages"
+    },
+]
+
+let pages_pictures = [
+    {
+        url: "pictures/5129130.jpg"
+    },
+    {
+        url: "pictures/1347872.jpg"
+    },
     {
         url: "pictures/590cdbc4efd19b9.png"
     },
@@ -37,31 +59,6 @@ let pictures = [
     },
     {
         url: "pictures/sr243b0131f1faws3.png"
-    }
-]
-
-let pages = [
-    {
-        id: 0,
-        name: "no pages yet"
-    }, {
-        id: 1,
-        name: "dwoadalx"
-    }, {
-        id: 2,
-        name: "no zap"
-    }, {
-        id: 3,
-        name: "no pages"
-    },
-]
-
-let pages_pictures = [
-    {
-        url: "pictures/5129130.jpg"
-    },
-    {
-        url: "pictures/1347872.jpg"
     }
 ]
 
@@ -213,31 +210,6 @@ window.onload = () => {
         document.getElementById("welcome").style.animation = "anisextion1 1s"
         document.getElementById("welcome").style.display = "flex"
         document.getElementById("result").style.userSelect = "none"
-        backi.style.backgroundBlendMode = "darken"
     }, 1000)
-
-    var random = Math.floor(Math.random() * (pictures.length))
-
-    if (random == 2)
-        while (random == 2)
-            random = Math.floor(Math.random() * (pictures.length))
-    var saved_s = pictures[random].url
-    backi.style.backgroundImage = "url('" + saved_s + "')";
-    backi.style.backgroundRepeat = "no-repeat"
-    backi.style.backgroundSize = "cover"
-    backi.style.backgroundPosition = "center"
-    backi.style.backgroundAttachment = "fixed"
-
-    setInterval(function () {
-        backi.classList.toggle("transi")
-
-        random = Math.floor(Math.random() * (pictures.length))
-        saved_s = pictures[random].url
-        backi.style.backgroundImage = "url('" + saved_s + "')"
-        backi.style.backgroundRepeat = "no-repeat"
-        backi.style.backgroundSize = "cover"
-        backi.style.backgroundPosition = "center"
-        backi.style.backgroundAttachment = "fixed"
-    }, 60000)
 }
 
