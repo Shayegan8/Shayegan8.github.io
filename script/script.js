@@ -56,9 +56,6 @@ let pages_pictures = [
     {
 
         url: "pictures/sr28991f9e3a2aws3.png"
-    },
-    {
-        url: "pictures/sr243b0131f1faws3.png"
     }
 ]
 
@@ -96,12 +93,15 @@ document.getElementById("pixelshit").addEventListener("click", () => {
 document.body.addEventListener("click", (x) => {
     var str = new String(x.target.id)
     if (document.getElementById("bar").style.opacity == "1" && !str.includes("pixelshit")) {
-        document.getElementById("bar").style.animation = "none"
-        document.getElementById("bar").offsetWidth
-        document.getElementById("bar").style.animation = "slide-anisextion1 0.5s"
-        setTimeout(() => {
-            document.body.removeChild(document.getElementById("bar"))
-        }, 400)
+        setTimeout(() => { }, 1)
+        if (!str.includes("bar")) {
+            document.getElementById("bar").style.animation = "none"
+            document.getElementById("bar").offsetWidth
+            document.getElementById("bar").style.animation = "slide-anisextion1 0.5s"
+            setTimeout(() => {
+                document.body.removeChild(document.getElementById("bar"))
+            }, 400)
+        }
     }
 })
 
@@ -140,6 +140,24 @@ const removeAll = (element) => { // i want anonymous be const :)
         element.removeChild(element.lastChild)
     }
 }
+
+document.getElementById("theme").addEventListener("click", () => {
+    if (backi.style.backgroundColor.includes("black")) {
+        backi.style.backgroundColor = "rgb(185, 178, 206)"
+        document.getElementById("result").style.backgroundColor = "rgb(185, 178, 206)"
+        document.getElementById("navi").style.backgroundColor = "rgb(185, 245, 255)"
+        document.getElementById("navi").style.boxShadow = "0 4px 2px -2px gray"
+        document.getElementById("dirtinput").style.color = "black"
+        document.getElementById("news").style.backgroundImage = "linear-gradient(to left, rgb(21, 83, 177), rgb(13, 76, 134), rgb(0, 47, 117))"
+    } else {
+        backi.style.backgroundColor = "black"
+        document.getElementById("result").style.backgroundColor = "black"
+        document.getElementById("navi").style.backgroundColor = "rgb(10, 10, 10)"
+        document.getElementById("navi").style.boxShadow = "none"
+        document.getElementById("dirtinput").style.color = "white"
+        document.getElementById("news").style.backgroundImage = "linear-gradient(to left, rgb(30, 14, 73), rgb(21, 0, 78), rgb(14, 0, 54))"
+    }
+})
 
 document.getElementById("dirtinput").addEventListener("input", (x) => {
     if (resultList.getElementsByTagName("li") != 0) {
@@ -180,7 +198,6 @@ document.getElementById("dirtinput").addEventListener("input", (x) => {
     if (doloop && value != "") {
         document.getElementById("news").style.display = "none"
         for (let name of checker.values()) {
-            alert(name.name)
             const elm = document.createElement("li")
             elm.innerHTML = `
                 <p>
@@ -195,7 +212,10 @@ document.getElementById("dirtinput").addEventListener("input", (x) => {
             elm.style.backgroundClip = "cover"
             elm.style.backgroundPosition = "center"
             if (resultList.querySelectorAll("li").length <= 0) {
+                resultList.appendChild(elm)
+            } else {
                 resultList.insertBefore(elm, elm.previousSibling)
+
             }
         }
     } else if (value == "") {
