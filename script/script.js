@@ -143,6 +143,11 @@ const removeAll = (element) => { // i want anonymous be const :)
 
 document.getElementById("theme").addEventListener("click", () => {
     if (backi.style.backgroundColor.includes("black")) {
+        document.getElementById("result").style.transition = "background-color 1s"
+        document.getElementById("dirtinput").style.transition = "background-color 1s"
+        document.getElementById("navi").style.transition = "background-color 1s"
+        document.getElementById("news").style.transition = "background-image 1s"
+        backi.style.transition = "background-color 1s"
         backi.style.backgroundColor = "rgb(185, 178, 206)"
         document.getElementById("result").style.backgroundColor = "rgb(185, 178, 206)"
         document.getElementById("navi").style.backgroundColor = "rgb(185, 245, 255)"
@@ -150,6 +155,11 @@ document.getElementById("theme").addEventListener("click", () => {
         document.getElementById("dirtinput").style.color = "black"
         document.getElementById("news").style.backgroundImage = "linear-gradient(to left, rgb(21, 83, 177), rgb(13, 76, 134), rgb(0, 47, 117))"
     } else {
+        document.getElementById("result").style.transition = "background-color 1s"
+        document.getElementById("dirtinput").style.transition = "background-color 1s"
+        document.getElementById("navi").style.transition = "background-color 1s"
+        document.getElementById("news").style.transition = "background-image 1s"
+        backi.style.transition = "background-color 1s"
         backi.style.backgroundColor = "black"
         document.getElementById("result").style.backgroundColor = "black"
         document.getElementById("navi").style.backgroundColor = "rgb(10, 10, 10)"
@@ -232,6 +242,11 @@ window.onload = () => {
 
     if (window.matchMedia) {
         if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            document.getElementById("result").style.transition = "none"
+            document.getElementById("dirtinput").style.transition = "none"
+            document.getElementById("navi").style.transition = "none"
+            document.getElementById("news").style.transition = "none"
+            backi.style.transition = "none"
             backi.style.backgroundColor = "black"
             document.getElementById("result").style.backgroundColor = "black"
             document.getElementById("navi").style.backgroundColor = "rgb(10, 10, 10)"
@@ -239,6 +254,11 @@ window.onload = () => {
             document.getElementById("dirtinput").style.color = "white"
             document.getElementById("news").style.backgroundImage = "linear-gradient(to left, rgb(30, 14, 73), rgb(21, 0, 78), rgb(14, 0, 54))"
         } else {
+            document.getElementById("result").style.transition = "none"
+            document.getElementById("dirtinput").style.transition = "none"
+            document.getElementById("navi").style.transition = "none"
+            document.getElementById("news").style.transition = "none"
+            backi.style.transition = "none"
             backi.style.backgroundColor = "rgb(185, 178, 206)"
             document.getElementById("result").style.backgroundColor = "rgb(185, 178, 206)"
             document.getElementById("navi").style.backgroundColor = "rgb(185, 245, 255)"
