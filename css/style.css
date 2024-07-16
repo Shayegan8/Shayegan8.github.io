@@ -3,6 +3,7 @@ body {
     font-family: kirpixel;
     flex-direction: column;
     margin: 0;
+    overflow: hidden;
 }
 
 .navbar {
@@ -31,31 +32,25 @@ body {
     color: rgb(75, 75, 119);
     margin-left: 1.5%;
 
-    margin-top: 0%;
-    margin-bottom: 1%;
 }
 
 .navbar li:nth-child(2) {
     margin-left: 0.6%;
 }
 
-.navbar li:nth-child(3) {
-    margin-right: 1%;
-    padding: 1.1%;
-    padding-bottom: 0;
+
+.navbar li:nth-child(3) {    
+    position: sticky;
     float: right;
+    margin-right: 1%;
+    top: 24%;
+    bottom: 3%;
 }
 
-.main {
-    position: fixed;
-    font-size: 22px;
-    width: 60%;
-    height: 70%;
-    left: 40%;
-    top: 55%;
-    transform: translate(-50%, -50%);
-    border-radius: 5px;
-    border-color: rgb(39, 39, 39);
+.navbar li:nth-child(4) {
+    position: sticky;
+    float: right;
+    top: 40%;
 }
 
 .main-bottom {
@@ -80,10 +75,9 @@ body {
 }
 
 .foot {
+    width: 80%;
     list-style: none;
-    bottom: 0;
-    margin: 0;
-    padding: 0;
+    bottom: 1%;
     position: fixed;
     transform: translate(-50%, -50%);
     left: 50%;
@@ -91,27 +85,31 @@ body {
 }
 
 .toxt {
-    font-size: 14px;
     display: inline-block;
+    background-color: rgb(179, 255, 195);
+    padding: 0.5%;
+    border-radius: 4px;
     color: rgb(0, 35, 190);
 }
 
-.splitor {
-    display: inline-block;
-    color: rgb(46, 46, 46);
-    font-weight: 800;
-    font-size: 10px;
-    user-select: none;
-}
-
-.foot li:nth-child(3) {
+.foot li:nth-child(2) {
+    border-radius: 2px;
+    background-color: rgb(179, 255, 195);
+    padding: 0.5%;
     display: inline-block;
 }
 
-.foot li:nth-child(3) a {
+.foot li:nth-child(2) a {
     color: rgb(255, 65, 65);
     text-decoration: none;
-    font-size: 14px;
+    font-size: 15px;
+}
+
+#msg {
+    position: fixed;
+    margin-top: -8%;
+    margin-left: -20%;
+    float: left;
 }
 
 #welcome {
@@ -169,7 +167,6 @@ body {
     position: fixed;
     opacity: 0;
     right: 0;
-    margin-top: 3%;
     padding: 0;
     margin: 0;
     height: 100%;
@@ -185,6 +182,7 @@ body {
 #bar li:nth-child(1) {
     padding: 1%;
     margin: 1%;
+    color: white;
 }
 
 #bar li:nth-child(2) {
@@ -196,50 +194,33 @@ body {
 }
 
 #dirtinput {
-    margin-top: 2%;
-    margin-bottom: -40px;
-    width: 48%;
-    padding: 1%;
-    padding-top: 1.5%;
-    padding-bottom: 1.5%;
-    height: 5%;
+    text-align: center;
     font-family: kirpixel;
-    background-color: rgba(0, 0, 0, 0.7);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border: 5px black solid;
-    border-radius: 4px;
+    border: none;
+    background: none;
     color: white;
     outline: none;
-    font-size: 20px;
+    font-size: 13px;
+    display: flex;
 }
 
+
 #result {
-    overflow: scroll;
-    flex: 1;
-    margin-top: 2%;
-    padding: 0;
-    height: 50%;
-    width: 50%;
-    position: fixed;
     background-color: rgba(0, 0, 0, 0);
 }
 
 #result-list {
-    padding: 0;
-    margin: 0;
-    flex-direction: column;
     list-style: none;
 
 }
 
 #result-list li {
-    margin: 1%;
+    margin: 1% auto;
     margin-top: 0.5%;
     padding: 1%;
     border: 4px solid;
     border-radius: 4px;
+    width: 60%;
     border-color: rgba(0, 0, 0, 0.8);
 }
 
@@ -276,16 +257,17 @@ body {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    padding: 0.5%;
-    margin-top: 1.6%;
+    position: fixed;
+    margin: 0% 4.8% 5% 4.35%;
+    overflow: auto;
+    flex: 1;
+    height: 88%;
+    width: 90%;
     border: 2.5px rgba(0, 0, 0, 0.8) solid;
     border-radius: 4px;
     color: white;
+    padding: 0.4%;
     display: flex;
-    position: fixed;
-
-    height: 49%;
-    width: 50%;
 }
 
 #fuckduck {
@@ -347,26 +329,14 @@ body {
         width: 100%;
     }
 
-    .texts {
-        margin-top: 1%;
-    }
-
     .navbar li:nth-child(1) {
         color: rgb(75, 75, 119);
         margin-left: 2%;
-        margin-bottom: 3%;
+        margin-bottom: 1%;
     }
 
     .navbar li:nth-child(2) {
         margin-left: 0.9%;
-    }
-
-    .foot li:nth-child(3) a {
-        font-size: 11px;
-    }
-
-    .toxt {
-        font-size: 11px;
     }
 
     #bar {
@@ -380,18 +350,10 @@ body {
         margin-left: 4%;
     }
 
-    #dirtinput {
-        width: 100%;
-    }
+}
 
-    #news {
-        width: 100%;
-    }
-
-    #result {
-        width: 100%;
-    }
-
+@media only screen and (max-width: 1316px) {
+    
 }
 
 ::selection {

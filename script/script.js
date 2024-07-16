@@ -71,59 +71,58 @@ const welcomi = document.getElementById("welcome")
 document.getElementById("close").addEventListener("click", () => {
     document.getElementById("welcome").style.opacity = "0"
     backi.style.backgroundBlendMode = "normal"
-    document.getElementById("main").style.userSelect = "text"
+    document.getElementById("result").style.userSelect = "text"
     welcome_fucker()
 
 })
 
 document.getElementById("pixelshit").addEventListener("click", () => {
-    if (document.getElementById("bar").style.opacity == 0) {
-        document.getElementById("bar").style.opacity = 1
-        document.getElementById("bar").style.animation = "none"
-        document.getElementById("bar").offsetWidth
-        document.getElementById("bar").style.animation = "slide-anisextion 0.5s"
-    } else {
+    if (!document.contains(document.getElementById("bar"))) {
+        const divi = document.createElement("div")
+        divi.id = "bar"
+        divi.innerHTML = `<ul>
+        <li>
+            Pages:
+        </li>
+        <li>
+            - Nothing found
+        </li>
+    </ul>`
+        divi.style.opacity = 1
+        divi.style.animation = "none"
+        divi.offsetWidth
+        divi.style.animation = "slide-anisextion 0.5s"
+        document.body.appendChild(divi)
+    }
+})
+
+document.body.addEventListener("click", (x) => {
+    var str = new String(x.target.id)
+    if (document.getElementById("bar").style.opacity == "1" && !str.includes("pixelshit")) {
         document.getElementById("bar").style.animation = "none"
         document.getElementById("bar").offsetWidth
         document.getElementById("bar").style.animation = "slide-anisextion1 0.5s"
         setTimeout(() => {
-            document.getElementById("bar").style.opacity = 0
+            document.body.removeChild(document.getElementById("bar"))
         }, 400)
     }
 })
 
-//unused
-document.getElementById("pixelshit").addEventListener("pointerover", () => {
-
-})
-
-document.getElementById("backi").addEventListener("click", () => {
-    document.getElementById("welcome").style.opacity = "0"
-    backi.style.backgroundBlendMode = "normal"
-    document.getElementById("main").style.userSelect = "text"
-    welcome_fucker()
-
-})
-
-document.getElementById("main").addEventListener("click", () => {
-    document.getElementById("welcome").style.opacity = "0"
-    backi.style.backgroundBlendMode = "normal"
-    document.getElementById("main").style.userSelect = "text"
-    welcome_fucker()
-
-})
-
-document.getElementById("navi").addEventListener("click", () => {
-    document.getElementById("welcome").style.opacity = "0"
-    backi.style.backgroundBlendMode = "normal"
-    document.getElementById("main").style.userSelect = "text"
+document.body.addEventListener("click", (x) => {
+    var str = new String(x.target.id)
+    if (!(str.includes("welcome") || str.includes("welcome-msg"))) {
+        document.getElementById("welcome").style.opacity = "0"
+        backi.style.backgroundBlendMode = "normal"
+        document.getElementById("result").style.userSelect = "text"
+        welcome_fucker()
+    }
 })
 
 document.addEventListener("keypress", (x) => {
     if (x.key === "Enter" && backi.style.backgroundBlendMode != "normal" || x.code === "Space" && backi.style.backgroundBlendMode != "normal") {
         document.getElementById("welcome").style.opacity = "0"
         backi.style.backgroundBlendMode = "normal"
-        document.getElementById("main").style.userSelect = "text"
+        document.getElementById("result").style.userSelect = "text"
         welcome_fucker()
     }
 })
@@ -213,16 +212,12 @@ window.onload = () => {
     setTimeout(() => {
         document.getElementById("welcome").style.animation = "anisextion1 1s"
         document.getElementById("welcome").style.display = "flex"
-        document.getElementById("main").style.userSelect = "none"
+        document.getElementById("result").style.userSelect = "none"
         backi.style.backgroundBlendMode = "darken"
     }, 1000)
 
     var random = Math.floor(Math.random() * (pictures.length))
-    if (random == 10) {
-        document.getElementById("msg").style.color = "white"
-    } else {
-        document.getElementById("msg").style.color = "black"
-    }
+
     if (random == 2)
         while (random == 2)
             random = Math.floor(Math.random() * (pictures.length))
@@ -235,11 +230,7 @@ window.onload = () => {
 
     setInterval(function () {
         backi.classList.toggle("transi")
-        if (random == 10) {
-            document.getElementById("msg").style.color = "white"
-        } else {
-            document.getElementById("msg").style.color = "black"
-        }
+
         random = Math.floor(Math.random() * (pictures.length))
         saved_s = pictures[random].url
         backi.style.backgroundImage = "url('" + saved_s + "')"
