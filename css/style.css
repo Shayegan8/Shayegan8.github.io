@@ -104,10 +104,12 @@ body {
 
 #theme {
     display: flex;
-    position: fixed;
+    position: absolute;
     color: white;
     bottom: 8%;
-    padding: 2%;
+    text-align: center;
+    align-items: center;
+    height: 8%;
     left: 83%;
     padding: 0 3% 0 3%;   
     animation: anisextion2 4s infinite forwards;
