@@ -176,10 +176,11 @@ document.getElementById("dirtinput").addEventListener("input", (x) => {
             doloop = false
         }
     }
+
     if (doloop && value != "") {
         document.getElementById("news").style.display = "none"
         for (let name of checker.values()) {
-
+            alert(name.name)
             const elm = document.createElement("li")
             elm.innerHTML = `
                 <p>
@@ -189,14 +190,11 @@ document.getElementById("dirtinput").addEventListener("input", (x) => {
                     ID: ${name.id}
                 </div>`
             var random = Math.floor(Math.random() * pages_pictures.length)
-
             elm.style.backgroundImage = "url('" + pages_pictures[random].url + "')"
             elm.style.backgroundRepeat = "no-repeat"
             elm.style.backgroundClip = "cover"
             elm.style.backgroundPosition = "center"
             if (resultList.querySelectorAll("li").length <= 0) {
-                resultList.appendChild(elm != null ? elm : null)
-            } else if (resultList.querySelectorAll("li").length > 0) {
                 resultList.insertBefore(elm, elm.previousSibling)
             }
         }
