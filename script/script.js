@@ -154,6 +154,7 @@ document.getElementById("theme").addEventListener("click", () => {
         document.getElementById("navi").style.boxShadow = "0 4px 2px -2px gray"
         document.getElementById("dirtinput").style.color = "black"
         document.getElementById("news").style.backgroundImage = "linear-gradient(to left, rgb(21, 83, 177), rgb(13, 76, 134), rgb(0, 47, 117))"
+        document.getElementById("result-list").style.backgroundImage = "linear-gradient(to left, rgb(21, 83, 177), rgb(13, 76, 134), rgb(0, 47, 117))"
     } else {
         document.getElementById("result").style.transition = "background-color 1s"
         document.getElementById("dirtinput").style.transition = "background-color 1s"
@@ -166,6 +167,7 @@ document.getElementById("theme").addEventListener("click", () => {
         document.getElementById("navi").style.boxShadow = "none"
         document.getElementById("dirtinput").style.color = "white"
         document.getElementById("news").style.backgroundImage = "linear-gradient(to left, rgb(30, 14, 73), rgb(21, 0, 78), rgb(14, 0, 54))"
+        document.getElementById("result-list").style.backgroundImage = "linear-gradient(to left, rgb(30, 14, 73), rgb(21, 0, 78), rgb(14, 0, 54))"
     }
 })
 
@@ -253,6 +255,7 @@ window.onload = () => {
             document.getElementById("navi").style.boxShadow = "none"
             document.getElementById("dirtinput").style.color = "white"
             document.getElementById("news").style.backgroundImage = "linear-gradient(to left, rgb(30, 14, 73), rgb(21, 0, 78), rgb(14, 0, 54))"
+            document.getElementById("result-list").style.backgroundImage = "linear-gradient(to left, rgb(30, 14, 73), rgb(21, 0, 78), rgb(14, 0, 54))"
         } else {
             document.getElementById("result").style.transition = "none"
             document.getElementById("dirtinput").style.transition = "none"
@@ -265,6 +268,7 @@ window.onload = () => {
             document.getElementById("navi").style.boxShadow = "0 4px 2px -2px gray"
             document.getElementById("dirtinput").style.color = "black"
             document.getElementById("news").style.backgroundImage = "linear-gradient(to left, rgb(21, 83, 177), rgb(13, 76, 134), rgb(0, 47, 117))"
+            document.getElementById("result-list").style.backgroundImage = "linear-gradient(to left, rgb(21, 83, 177), rgb(13, 76, 134), rgb(0, 47, 117))"
         }
     }
 }
