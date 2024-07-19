@@ -82,7 +82,6 @@ const removeAll = (element) => {
 
 function white(check) {
     if (check != 0) {
-        alert("ass")
         result.style.transition = "background-color 1s"
         dirtinput.style.transition = "background-color 1s"
         navi.style.transition = "background-color 1s"
@@ -101,7 +100,6 @@ function white(check) {
 function black(check) {
 
     if (check != 0) {
-        alert("ass")
         result.style.transition = "background-color 1s"
         dirtinput.style.transition = "background-color 1s"
         navi.style.transition = "background-color 1s"
