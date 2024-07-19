@@ -16,7 +16,6 @@ body {
     list-style: none;
     position: relative;
     user-select: none;
-    transition: background-color 1s;
 }
 
 .texts {
@@ -240,7 +239,6 @@ body {
     align-items: center;
     text-align: center;
     display: flex;
-    transition: background-image 1s;
 }
 
 #result-list li {

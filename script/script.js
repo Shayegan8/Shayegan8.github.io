@@ -60,12 +60,67 @@ let pages_pictures = [
 ]
 
 let backi = document.getElementById("backi")
-const welcomi = document.getElementById("welcome")
+let welcome = document.getElementById("welcome")
+let result = document.getElementById("result")
+let resultList = document.getElementById("result-list")
+let news = document.getElementById("news")
+let navi = document.getElementById("navi")
+let dirtinput = document.getElementById("dirtinput")
+
+function welcome_fucker() {
+    setTimeout(() => {
+        welcome.remove()
+        document.getElementById("welcome-msg").remove()
+    }, 1000)
+}
+
+const removeAll = (element) => {
+    while (element.lastChild) {
+        element.removeChild(element.lastChild)
+    }
+}
+
+function white(check) {
+    if (check != 0) {
+        alert("ass")
+        result.style.transition = "background-color 1s"
+        dirtinput.style.transition = "background-color 1s"
+        navi.style.transition = "background-color 1s"
+        news.style.transition = "background-image 1s"
+        backi.style.transition = "background-color 1s"
+    }
+    backi.style.backgroundColor = "rgb(185, 178, 206)"
+    result.style.backgroundColor = "rgb(185, 178, 206)"
+    navi.style.backgroundColor = "rgb(185, 245, 255)"
+    navi.style.boxShadow = "0 4px 2px -2px gray"
+    dirtinput.style.color = "black"
+    news.style.backgroundImage = "linear-gradient(to left, rgb(21, 83, 177), rgb(13, 76, 134), rgb(0, 47, 117))"
+    resultList.style.backgroundImage = "linear-gradient(to left, rgb(21, 83, 177), rgb(13, 76, 134), rgb(0, 47, 117))"
+}
+
+function black(check) {
+
+    if (check != 0) {
+        alert("ass")
+        result.style.transition = "background-color 1s"
+        dirtinput.style.transition = "background-color 1s"
+        navi.style.transition = "background-color 1s"
+        news.style.transition = "background-image 1s"
+        backi.style.transition = "background-color 1s"
+    }
+    backi.style.backgroundColor = "black"
+    result.style.backgroundColor = "black"
+    navi.style.backgroundColor = "rgb(10, 10, 10)"
+    navi.style.boxShadow = "none"
+    dirtinput.style.color = "white"
+    news.style.backgroundImage = "linear-gradient(to left, rgb(30, 14, 73), rgb(21, 0, 78), rgb(14, 0, 54))"
+    resultList.style.backgroundImage = "linear-gradient(to left, rgb(30, 14, 73), rgb(21, 0, 78), rgb(14, 0, 54))"
+}
 
 document.getElementById("close").addEventListener("click", () => {
-    document.getElementById("welcome").style.opacity = "0"
+    welcome.style.opacity = "0"
     backi.style.backgroundBlendMode = "normal"
-    document.getElementById("result").style.userSelect = "text"
+    result.style.userSelect = "text"
     welcome_fucker()
 
 })
@@ -108,74 +163,34 @@ document.body.addEventListener("click", (x) => {
 document.body.addEventListener("click", (x) => {
     var str = new String(x.target.id)
     if (!(str.includes("welcome") || str.includes("welcome-msg"))) {
-        document.getElementById("welcome").style.opacity = "0"
+        welcome.style.opacity = "0"
         backi.style.backgroundBlendMode = "normal"
-        document.getElementById("result").style.userSelect = "text"
+        result.style.userSelect = "text"
         welcome_fucker()
     }
 })
 
 document.addEventListener("keypress", (x) => {
     if (x.key === "Enter" && backi.style.backgroundBlendMode != "normal" || x.code === "Space" && backi.style.backgroundBlendMode != "normal") {
-        document.getElementById("welcome").style.opacity = "0"
+        welcome.style.opacity = "0"
         backi.style.backgroundBlendMode = "normal"
-        document.getElementById("result").style.userSelect = "text"
+        result.style.userSelect = "text"
         welcome_fucker()
     }
 })
 
-function welcome_fucker() {
-    setTimeout(() => {
-        document.getElementById("welcome").remove()
-        document.getElementById("welcome-msg").remove()
-    }, 1000)
-}
-
-let set = new Set()
-
-let resultList = document.getElementById("result-list")
-
-const removeAll = (element) => { // i want anonymous be const :)
-    while (element.lastChild) {
-        element.removeChild(element.lastChild)
-    }
-}
-
 document.getElementById("theme").addEventListener("click", () => {
-    if (backi.style.backgroundColor.includes("black")) {
-        document.getElementById("result").style.transition = "background-color 1s"
-        document.getElementById("dirtinput").style.transition = "background-color 1s"
-        document.getElementById("navi").style.transition = "background-color 1s"
-        document.getElementById("news").style.transition = "background-image 1s"
-        backi.style.transition = "background-color 1s"
-        backi.style.backgroundColor = "rgb(185, 178, 206)"
-        document.getElementById("result").style.backgroundColor = "rgb(185, 178, 206)"
-        document.getElementById("navi").style.backgroundColor = "rgb(185, 245, 255)"
-        document.getElementById("navi").style.boxShadow = "0 4px 2px -2px gray"
-        document.getElementById("dirtinput").style.color = "black"
-        document.getElementById("news").style.backgroundImage = "linear-gradient(to left, rgb(21, 83, 177), rgb(13, 76, 134), rgb(0, 47, 117))"
-        document.getElementById("result-list").style.backgroundImage = "linear-gradient(to left, rgb(21, 83, 177), rgb(13, 76, 134), rgb(0, 47, 117))"
-    } else {
-        document.getElementById("result").style.transition = "background-color 1s"
-        document.getElementById("dirtinput").style.transition = "background-color 1s"
-        document.getElementById("navi").style.transition = "background-color 1s"
-        document.getElementById("news").style.transition = "background-image 1s"
-        backi.style.transition = "background-color 1s"
-        backi.style.backgroundColor = "black"
-        document.getElementById("result").style.backgroundColor = "black"
-        document.getElementById("navi").style.backgroundColor = "rgb(10, 10, 10)"
-        document.getElementById("navi").style.boxShadow = "none"
-        document.getElementById("dirtinput").style.color = "white"
-        document.getElementById("news").style.backgroundImage = "linear-gradient(to left, rgb(30, 14, 73), rgb(21, 0, 78), rgb(14, 0, 54))"
-        document.getElementById("result-list").style.backgroundImage = "linear-gradient(to left, rgb(30, 14, 73), rgb(21, 0, 78), rgb(14, 0, 54))"
-    }
+    if (backi.style.backgroundColor.includes("black"))
+        white(1)
+    else
+        black(1)
 })
 
-document.getElementById("dirtinput").addEventListener("input", (x) => {
+dirtinput.addEventListener("input", (x) => {
     if (resultList.getElementsByTagName("li") != 0) {
         removeAll(resultList)
     }
-    var value = document.getElementById("dirtinput").value
+    var value = dirtinput.value
     var doloop = true
     var checker = pages.filter((y) => {
         var bool = false
@@ -231,45 +246,22 @@ document.getElementById("dirtinput").addEventListener("input", (x) => {
             }
         }
     } else if (value == "") {
-        document.getElementById("news").style.display = "flex"
+        news.style.display = "flex"
     }
 })
 
 window.onload = () => {
     setTimeout(() => {
-        document.getElementById("welcome").style.animation = "anisextion1 1s"
-        document.getElementById("welcome").style.display = "flex"
-        document.getElementById("result").style.userSelect = "none"
+        welcome.style.animation = "anisextion1 1s"
+        welcome.style.display = "flex"
+        result.style.userSelect = "none"
     }, 1000)
 
     if (window.matchMedia) {
-        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-            document.getElementById("result").style.transition = "none"
-            document.getElementById("dirtinput").style.transition = "none"
-            document.getElementById("navi").style.transition = "none"
-            document.getElementById("news").style.transition = "none"
-            backi.style.transition = "none"
-            backi.style.backgroundColor = "black"
-            document.getElementById("result").style.backgroundColor = "black"
-            document.getElementById("navi").style.backgroundColor = "rgb(10, 10, 10)"
-            document.getElementById("navi").style.boxShadow = "none"
-            document.getElementById("dirtinput").style.color = "white"
-            document.getElementById("news").style.backgroundImage = "linear-gradient(to left, rgb(30, 14, 73), rgb(21, 0, 78), rgb(14, 0, 54))"
-            document.getElementById("result-list").style.backgroundImage = "linear-gradient(to left, rgb(30, 14, 73), rgb(21, 0, 78), rgb(14, 0, 54))"
-        } else {
-            document.getElementById("result").style.transition = "none"
-            document.getElementById("dirtinput").style.transition = "none"
-            document.getElementById("navi").style.transition = "none"
-            document.getElementById("news").style.transition = "none"
-            backi.style.transition = "none"
-            backi.style.backgroundColor = "rgb(185, 178, 206)"
-            document.getElementById("result").style.backgroundColor = "rgb(185, 178, 206)"
-            document.getElementById("navi").style.backgroundColor = "rgb(185, 245, 255)"
-            document.getElementById("navi").style.boxShadow = "0 4px 2px -2px gray"
-            document.getElementById("dirtinput").style.color = "black"
-            document.getElementById("news").style.backgroundImage = "linear-gradient(to left, rgb(21, 83, 177), rgb(13, 76, 134), rgb(0, 47, 117))"
-            document.getElementById("result-list").style.backgroundImage = "linear-gradient(to left, rgb(21, 83, 177), rgb(13, 76, 134), rgb(0, 47, 117))"
-        }
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches)
+            black(0)
+        else
+            white(0)
     }
 }
 
