@@ -185,6 +185,7 @@ document.getElementById("theme").addEventListener("click", () => {
 })
 
 dirtinput.addEventListener("input", (x) => {
+    resultList.style.display = "flex"
     if (resultList.getElementsByTagName("li") != 0) {
         removeAll(resultList)
     }
@@ -244,6 +245,7 @@ dirtinput.addEventListener("input", (x) => {
             }
         }
     } else if (value == "") {
+        resultList.style.display = "none"
         news.style.display = "flex"
     }
 })

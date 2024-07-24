@@ -238,7 +238,7 @@ body {
     padding: 0.4%;
     align-items: center;
     text-align: center;
-    display: flex;
+    display: none;
 }
 
 #result-list li {
